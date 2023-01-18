@@ -224,7 +224,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
 
         <div class="pt-5 mb-5 justify-content-center row desktop">
             <div class="col-md-12 text-center" data-aos="zoom-out-down" data-aos-duration="1000">
-                <h3 class="text-brown mb-3" style="font-weight: 700">4 Fitur Indo Survei</h3>
+                <h3 class="text-brown mb-5" style="font-weight: 700">4 Fitur Unggulan Indo Survei</h3>
             </div>
 
 
