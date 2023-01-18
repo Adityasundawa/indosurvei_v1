@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -23,57 +24,75 @@
         }
 
         .btn-warm {
-            background: #ECA869;
+            background: #6bd3d2;
             color: white;
         }
 
         .btn-warm:hover {
-            background: #b98352;
+            background: #6bd3d2;
             color: white;
         }
 
         .btn-warm:focus {
-            background: #ECA869;
+            background: #6bd3d2;
             color: white;
         }
 
         .btn-outline-warm {
-            border: 2px #ECA869 solid;
-            color: #ECA869;
+            border: 2px #6bd3d2 solid;
+            color: #6bd3d2;
         }
 
         .btn-outline-warm:hover {
-            border: 2px #ECA869 solid;
-            background: #b98352;
+            border: 2px #6bd3d2 solid;
+            background: #6bd3d2;
             color: white;
         }
 
         .bg-warm{
-            background: #ECA869;
+            background: #6bd3d2;
         }
 
         .navbar-cuscol {
-            background: #000;
+            background: rgba(0, 0, 0, 0);
+            padding: 20px;
+        }
+
+        .navbar-cuscol.scrolled {
+            background: #fff;
+        }
+
+        .navbar-cuscol.scrolled a{
+            color: #000;
         }
 
         .navbar-cuscol ul li a {
-            color: white
+            color: white;
+            font-weight: 500;
+        }
+
+        .navbar-cuscol ul li a:hover {
+            color: #6bd3d2
         }
 
         .carousel .carousel-indicators button {
             width: 10px;
             height: 0;
             border-radius: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 255, 255, 0.7);
             border-top: none;
         }
 
+        .carousel-inner .carousel-item {
+            transition: transform 1s ease;
+        }
+
         .text-warm {
-            color: #eca869
+            color: #ac53ed
         }
 
         .sect-bg {
-            background: hsla(46, 32%, 62%, 0.35)
+            background: rgba(108, 207, 210, 0.25)
         }
 
         .bg-thumb {
@@ -140,20 +159,20 @@
             </button>
             <div class="collapse navbar-collapse fw-bold mt-auto" id="navbarNav">
                 <ul class="navbar-nav ms-auto my-auto">
-                    <li class="nav-item">
+                    <li class="nav-item my-auto">
                         <a class="nav-link" href="#">About Us</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item my-auto">
                         <a class="nav-link" href="#">Feature</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item my-auto">
                         <a class="nav-link" href="#">Survey Example</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-warm w-125 mx-2" href="#">SIGN UP</a>
+                        <a class="nav-link btn btn-warm w-125 my-1 mx-2" href="#">SIGN UP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-warm w-125 mx-2" href="#">LOGIN</a>
+                        <a class="nav-link btn btn-outline-warm w-125 my-1 mx-2" href="#">LOGIN</a>
                     </li>
                 </ul>
             </div>
@@ -162,14 +181,14 @@
 
     @yield('content')
 
-    <footer class="p-5" style="background: #bcaf7e">
+    <footer class="p-5" style="background: #daf3f4">
         <div class="container">
             <div class="row">
-                <div class="col-6">
-                    Copyright © 2022 Pentagon
-                </div>
-                <div class="col-6 text-end">
+                <div class="col-md-6 text-end">
                     Privacy Policy - Term of Use
+                </div>
+                <div class="col-md-6">
+                    Copyright © 2022 Pentagon
                 </div>
             </div>
         </div>
@@ -182,7 +201,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script>
+        AOS.init();
+    </script>
     <script>
         $(function () {
             $(document).scroll(function () {
