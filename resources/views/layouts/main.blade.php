@@ -169,10 +169,10 @@
                         <a class="nav-link" href="#">Survey Example</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-warm w-125 my-1 mx-2" href="#">SIGN UP</a>
+                        <a class="nav-link btn btn-warm w-125 my-1 mx-2" href="{{url('')}}/register">SIGN UP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-warm w-125 my-1 mx-2" href="#">LOGIN</a>
+                        <a class="nav-link btn btn-outline-warm w-125 my-1 mx-2" href="{{url('')}}/login">LOGIN</a>
                     </li>
                 </ul>
             </div>
