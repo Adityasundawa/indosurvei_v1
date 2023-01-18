@@ -117,7 +117,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
 
 <section>
     <div class="container pt-5 pb-5">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-md-5 mb-4 text-center" data-aos="zoom-in-right" data-aos-duration="1000">
                 <img class="carousel-img-w" src="{{url('/')}}/assets/illustration/chart_indosurvei.png" alt="">
             </div>
@@ -224,7 +224,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
 
         <div class="pt-5 mb-5 justify-content-center row desktop">
             <div class="col-md-12 text-center" data-aos="zoom-out-down" data-aos-duration="1000">
-                <h3 class="text-brown" style="font-weight: 700">4 Roles Dalam Penyelesaian Sengketatanah.id</h3>
+                <h3 class="text-brown mb-3" style="font-weight: 700">4 Fitur Indo Survei</h3>
             </div>
 
 
