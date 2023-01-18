@@ -79,23 +79,6 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
         </div>
         <div class="mb-5" data-aos="fade-right"  data-aos-duration="2000">
             <h2 class="mb-4">
-                <b class="text-warm">Mengapa</b> Survey itu Penting?
-            </h2>
-            <p>
-                Berdasarkan penelitian, 42% perusahaan baru gagal karena produk yang mereka tawarkan tidak sesuai dengan
-                kebutuhan pelanggan. Sebagian besar dari mereka belum memvalidasi bisnis/produk perusahaan baru mereka
-                ke
-                target pasar, sehingga menyebabkan bisnis tidak berjalan dengan baik dan kurang mendapat perhatian. Dan
-                kabar baiknya, hal-hal tersebut bisa dihindari dengan melakukan survei terlebih dahulu.
-            </p>
-            <p>
-                Survei akan membantu perusahaan baru untuk mendapatkan & menemukan informasi yang berguna untuk kemajuan
-                bisnis/perusahaan baru, seperti mengetahui kebutuhan, kepuasan, keinginan pelanggan untuk bisnis mereka,
-                termasuk apa yang kurang dari bisnis dan apa yang dapat ditingkatkan.
-            </p>
-        </div>
-        <div class="mb-5" data-aos="fade-left" data-aos-duration="1000">
-            <h2 class="mb-4">
                 <b class="text-warm">Apa</b> itu Indo Survei?
             </h2>
             <p>
