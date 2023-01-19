@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('survey', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('category');
-            $table->string('description');
-            $table->longText('images');
-            $table->timestamps();
+        Schema::table('type_survey', function (Blueprint $table) {
+            $table->integer('question_id');
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('question');
+        Schema::table('short_question', function (Blueprint $table) {
+            //
+        });
     }
 };

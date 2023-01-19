@@ -305,7 +305,7 @@
     <script src="{{url('/')}}/assets/js/ajaxchimp.min.js"></script>
     <script src="{{url('/')}}/assets/js/custom.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-
+@include('sweetalert::alert')
     <script>
         $(".kelas-tab-atas").on('click', function() {
             if ($(this).text().toLowerCase() == 'pertanyaan') {

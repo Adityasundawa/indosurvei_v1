@@ -21,6 +21,7 @@
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog">
+                                    <form action="{{route('action.survey.question')}}" method="POST">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h1 class="modal-title fs-5" id="exampleModalLabel">Survey Baru</h1>
@@ -28,8 +29,8 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{route('action.survey.question')}}" method="POST">
-
+                                         
+                                             @csrf
                                                 <div class="row mb-3">
                                                     <label for="pilihsurvey">Pilih Tipe</label>
                                                     <div class="col-6">
@@ -54,13 +55,13 @@
 
                                                 <div class="mb-3">
                                                     <label for="judul" class="form-label">Judul Survey</label>
-                                                    <input type="text" class="form-control" name="judul" id="judul"
+                                                    <input type="text" required class="form-control" name="judul" id="judul"
                                                         aria-describedby="judulHelp" placeholder="Masukkan Judul">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="kategori" class="form-label">Kategori</label>
-                                                    <select id="kategori" class="form-select form-control">
+                                                    <select id="kategori" name="kategori" required class="form-select form-control">
                                                         <option selected="" disabled>Pilih Kategori</option>
                                                         <option value="Bisnis & E-Commerce">Bisnis & E-Commerce</option>
                                                         <option value="Pendidikan">Pendidikan</option>
@@ -79,18 +80,18 @@
 
                                                 <div class="mb-3">
                                                     <label for="deskripsi" class="form-label">Deskripsi</label>
-                                                    <textarea class="form-control" name="deskripsi" id="deskripsi"
+                                                    <textarea required class="form-control" name="deskripsi" id="deskripsi"
                                                         rows="3"></textarea>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="gambar" class="form-label">Gambar Background</label>
-                                                    <input type="file" class="form-control" style="height: auto" name="gambar" id="gambar"
+                                                    <input type="file"  class="form-control" style="height: auto" name="gambar" id="gambar"
                                                         placeholder="Masukkan Gambar" aria-describedby="gambarHelp">
                                                     <div id="gambarHelp" class="form-text">File berformat .jpg atau .png
                                                         & maksimal 2MB (ukuran 710x178px)</div>
                                                 </div>
-                                            </form>
+                                            
                                         </div>
                                         <div class="modal-footer" style="display: inline-block">
                                             <div class="row">
@@ -99,10 +100,11 @@
                                                         data-bs-dismiss="modal">Close</button>
                                                 </div>
                                                 <div class="col-6">
-                                                    <button type="button" class="btn btn-primary w-100">Buat Survey</button>
+                                                    <button type="submit" class="btn btn-primary w-100">Buat Survey</button>
                                                 </div>
                                             </div>
                                         </div>
+                                    </form>
                                     </div>
                                 </div>
                             </div>
@@ -132,24 +134,35 @@
                     </div>
 
                     <div class="row">
+                        @foreach ($question as $que)
                         <div class="col-md-3">
                             
-                            <a href="{{url('')}}/detail">
+                            <a href="{{url('')}}/edit-survei/{{Crypt::encrypt($que['id'])}}">
                                 <div class="card text-left">
                                     <div class="card-header bg-thumb">
                                     </div>
                                     <div class="card-body">
-                                        <span class="badge rounded-pill bg-primary mb-1">Tipe</span> <small>2023-01-10</small>
-                                        <h4 class="card-title mb-0">Judul Survei</h4>
-                                        <small>Template oleh <b>Nama</b></small>
-                                        <p class="card-text mb-5">Deskripsi</p>
+                                        <span class="badge rounded-pill bg-primary mb-1">{{$que['category']}}</span> <small>{{$que['created_at']}}</small>
+                                        @if (strlen($que['title']) > 20)
+                                        <h4 class="card-title mb-0">{{substr($que['title'],0,35)}}...</h4>
+                                        @else
+                                        <h4 class="card-title mb-0">{{$que['title']}}</h4>
+                                        @endif
+                                        <small>Template oleh <b>{{$que['name']}}</b></small>
+                                        @if (strlen($que['description']) > 50)
+                                        <p class="card-text mb-5">{{substr($que['description'],0,100)}}...</p>
+                                        @else
+                                        <p class="card-text mb-5">{{$que['description']}}</p>
+                                        @endif
                                         <span class="badge rounded-pill bg-secondary mb-1">Kategori</span> <br>
                                         <small>0 Pertanyaan | 0 Jawaban</small>
                                     </div>
                                 </div>
                             </a>
 
-                        </div>
+                        </div> 
+                        @endforeach
+                        
                     </div>
 
                 </div>
