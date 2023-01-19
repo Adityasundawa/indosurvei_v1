@@ -81,7 +81,8 @@ class UserController extends Controller
             //     'question_id' =>  $question->id,
             // ]);
             // $n = count($request['answerField']);
-            dd($request);
+
+            
 
          }
 
@@ -99,6 +100,14 @@ class UserController extends Controller
         $item->delete();
         $item2 = Typesurvey::where('question_id',$id);
         $item2->delete();
+        return response()->json(['success' => 'Item deleted']);
+    }
+
+
+    public function delete_survei_all($id)
+    {
+        $item4 = Survey::find($id);
+        $item4->delete();
         return response()->json(['success' => 'Item deleted']);
     }
 

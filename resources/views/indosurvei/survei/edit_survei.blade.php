@@ -765,7 +765,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="row mb-4">
+                                                {{-- <div class="row mb-4">
                                                     <div class="col-md-3 fw-bold">Periode Survey</div>
                                                     <div class="col-md">
                                                         <div class="row">
@@ -803,7 +803,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
 
                                             <div class="tab-pane fade" id="v-pills-responden" role="tabpanel"
@@ -936,7 +936,7 @@
                                         </div>
                                         <div class="row mt-5">
                                             <div class="col-md">
-                                                <button class="btn btn-outline-danger">Hapus</button>
+                                                <button class="btn btn-outline-danger btn-delete-survei" data-id="{{ $question['id'] }}">Hapus</button>
                                             </div>
                                             <div class="col-md text-end">
                                                 <button class="btn btn-primary">Simpan</button>

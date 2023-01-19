@@ -837,7 +837,52 @@
     });
 });
 </script>
+<script>
+    $('button.btn-delete-survei').on('click', function (e) {
+    e.preventDefault();
+    let id = $(this).data('id');
+    let url = '{{url("/")}}/delete/survei/' + id;
+    Swal.fire({
+        title: 'Yakin Ingin Menghapus Survey Ini?',
+        text: "Jika sudah terhapus, kamu tidak dapat melihat survey ini lagi",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus'
+    }).then((result) => {
+        if (result.value) {
+            // Send DELETE request to server
+            $.ajax({
+                url: url,
+                type: 'DELETE',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                success: function (data) {
+                    // Show success message and reload page
+                    Swal.fire(
+                        'Deleted!',
+                        'Your item has been deleted.',
+                        'success'
+                    ).then(() => {
+                        window.location = '{{url("/")}}/dashboard'; // Redirect to '/items' page
+                    });
+                },
+                error: function (data) {
+                    // Show error message
+                    Swal.fire(
+                        'Error!',
+                        'There was an error deleting your item.',
+                        'error'
+                    );
+                }
+            });
+        }
+    });
+});
 
+</script>
 </body>
 
 </html>
