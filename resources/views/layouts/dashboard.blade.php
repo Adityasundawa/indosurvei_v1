@@ -420,19 +420,14 @@
                             <div class="mb-3">
                                 <label for="pilihan-${cloneCount}" class="form-label hanya label-terdekat">Pilihan ${cloneCount}</label>
                                 <input type="text"
-                                class="form-control input-terdekat" name="pilihan-${cloneCount}" id="pilihan-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
+                                class="form-control input-terdekat" name="pilihan[]" id="pilihan-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
                             </div>
                             <div class="row mb-3">
-                                <div class="col-6">
-                                    <label for="skip-${cloneCount}" class="form-label label-terdekat tap">Skip ke pertanyaan no.</label>
-                                    <input type="number"
-                                    class="form-control input-terdekat-skip" name="skip-${cloneCount}" id="skip-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan No.">
-                                </div>
-                                <div class="col-6">
+                                <div class="col-12">
                                     <div class="form-check">
                                         <input class="form-check-input kustom-1 input-terdekat-check" 
                                             type="checkbox"
-                                          id="kustom-${cloneCount}" name="" value="Lainnya">
+                                          id="kustom-${cloneCount}" name="lainnya[]" value="Lainnya">
                                         <label class="form-check-label label-terdekatphp"
                                             for="kustom-${cloneCount}">
                                             Kustom Jawaban
@@ -443,7 +438,7 @@
                             <div class="mb-3">
                                 <label for="gambar-${cloneCount}" class="form-label label-terdekat tap">Gambar</label>
                                 <input type="file"
-                                class="form-control input-terdekat-gambar" name="gambar-${cloneCount}" id="gambar-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
+                                class="form-control input-terdekat-gambar" name="gambar[]" id="gambar-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
                             </div>
                              <button type="button" class="btn btn-danger delete-card">delete</button>
                         </div>
@@ -503,21 +498,17 @@
                             <div class="mb-3">
                                 <label for="pilihan-centang-${cloneCount}" class="form-label hanya label-terdekat">Pilihan ${cloneCount}</label>
                                 <input type="text"
-                                class="form-control input-terdekat" name="pilihan-centang-${cloneCount}" id="pilihan-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
+                                class="form-control input-terdekat" name="pilihan_centang[]" id="pilihan-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
                             </div>
                             <div class="row mb-3">
-
-                                <div class="col-6">
-                                    <label for="skip-centang-${cloneCount}" class="form-label label-terdekat tap">Skip ke pertanyaan no.</label>
-                                    <input type="number"
-                                    class="form-control input-terdekat-skip" name="skip-centang-${cloneCount}" id="skip-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan No.">
-                                </div>
                                 
                                 <div class="col-6">
                                     <div class="form-check">
                                         <input
                                             class="form-check-input kustom-1 input-terdekat-check"
-                                            type="checkbox" id="kustom-centang-${cloneCount}"
+                                            type="checkbox" 
+                                            id="kustom-centang-${cloneCount}"
+                                            name="lainnya_centang[]"
                                             value="Lainnya">
                                         <label class="form-check-label label-terdekat"
                                             for="kustom-centang-${cloneCount}">
@@ -530,7 +521,7 @@
                             <div class="mb-3">
                                 <label for="gambar-centang-${cloneCount}" class="form-label label-terdekat tap">Gambar</label>
                                 <input type="file"
-                                class="form-control input-terdekat-gambar" name="gambar-centang-${cloneCount}" id="gambar-centang-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
+                                class="form-control input-terdekat-gambar" name="gambar_centang[]" id="gambar-centang-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
                             </div>
                              <button type="button" class="btn btn-danger delete-centang-card">delete</button>
                         </div>
@@ -554,7 +545,6 @@
                 .attr('for', `pilihan-centang-${i}`)
                 .end()
                 .find('input.input-terdekat')
-                .attr('name', `pilihan-centang-${i}`)
                 .attr('id', `pilihan-centang-${i}`)
                 .attr('placeholder', `Masukkan Pilihan ${i}`)
                 .end()
@@ -562,21 +552,18 @@
                 .attr('for', `skip-centang-${i}`)
                 .end()
                 .find('input.input-terdekat-skip')
-                .attr('name', `skip-centang-${i}`)
                 .attr('id', `skip-centang-${i}`)
                 .end()
                 .find('label.label-terdekat-gambar')
                 .attr('for', `gambar-centang-${i}`)
                 .end()
                 .find('input.input-terdekat-gambar')
-                .attr('name', `gambar-centang-${i}`)
                 .attr('id', `gambar-centang-${i}`)
                 .end()
                 .find('label.label-terdekat-check')
                 .attr('for', `kustom-centang-${i}`)
                 .end()
                 .find('input.input-terdekat-check')
-                .attr('name', `kustom-centang-${i}`)
                 .attr('id', `kustom-centang-${i}`);
             });
          
@@ -590,19 +577,14 @@
                             <div class="mb-3">
                                 <label for="pilihan-${cloneCount}" class="form-label hanya label-terdekat">Pilihan ${cloneCount}</label>
                                 <input type="text"
-                                class="form-control input-terdekat" name="pilihan-${cloneCount}" id="pilihan-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
+                                class="form-control input-terdekat" name="pilihan[]" id="pilihan-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
                             </div>
                             <div class="row mb-3">
-                                <div class="col-6">
-                                    <label for="skip-${cloneCount}" class="form-label label-terdekat tap">Skip ke pertanyaan no.</label>
-                                    <input type="number"
-                                    class="form-control input-terdekat-skip" name="skip-${cloneCount}" id="skip-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan No.">
-                                </div>
-                                <div class="col-6">
+                                <div class="col-12">
                                     <div class="form-check">
                                         <input class="form-check-input kustom-1 input-terdekat-check" 
                                             type="checkbox"
-                                          id="kustom-${cloneCount}" name="" value="Lainnya">
+                                          id="kustom-${cloneCount}" name="lainnya[]" value="Lainnya">
                                         <label class="form-check-label label-terdekatphp"
                                             for="kustom-${cloneCount}">
                                             Kustom Jawaban
@@ -613,7 +595,7 @@
                             <div class="mb-3">
                                 <label for="gambar-${cloneCount}" class="form-label label-terdekat tap">Gambar</label>
                                 <input type="file"
-                                class="form-control input-terdekat-gambar" name="gambar-${cloneCount}" id="gambar-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
+                                class="form-control input-terdekat-gambar" name="gambar[]" id="gambar-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
                             </div>
                              <button type="button" class="btn btn-danger delete-card-edit">delete</button>
                         </div>
@@ -637,7 +619,6 @@
                 .attr('for', `pilihan-${i}`)
                 .end()
                 .find('input.input-terdekat')
-                .attr('name', `pilihan-${i}`)
                 .attr('id', `pilihan-${i}`)
                 .attr('placeholder', `Masukkan Pilihan ${i}`)
                 .end()
@@ -645,21 +626,18 @@
                 .attr('for', `skip-${i}`)
                 .end()
                 .find('input.input-terdekat-skip')
-                .attr('name', `skip-${i}`)
                 .attr('id', `skip-${i}`)
                 .end()
                 .find('label.label-terdekat-gambar')
                 .attr('for', `gambar-${i}`)
                 .end()
                 .find('input.input-terdekat-gambar')
-                .attr('name', `gambar-${i}`)
                 .attr('id', `gambar-${i}`)
                 .end()
                 .find('label.label-terdekat-check')
                 .attr('for', `kustom-${i}`)
                 .end()
                 .find('input.input-terdekat-check')
-                .attr('name', `kustom-${i}`)
                 .attr('id', `kustom-${i}`);
             });
          
@@ -673,21 +651,15 @@
                             <div class="mb-3">
                                 <label for="pilihan-centang-${cloneCount}" class="form-label hanya label-terdekat">Pilihan ${cloneCount}</label>
                                 <input type="text"
-                                class="form-control input-terdekat" name="pilihan-centang-${cloneCount}" id="pilihan-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
+                                class="form-control input-terdekat" name="pilihan_centang[]" id="pilihan-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
                             </div>
                             <div class="row mb-3">
-
-                                <div class="col-6">
-                                    <label for="skip-centang-${cloneCount}" class="form-label label-terdekat tap">Skip ke pertanyaan no.</label>
-                                    <input type="number"
-                                    class="form-control input-terdekat-skip" name="skip-centang-${cloneCount}" id="skip-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan No.">
-                                </div>
                                 
-                                <div class="col-6">
+                                <div class="col-12">
                                     <div class="form-check">
                                         <input
                                             class="form-check-input kustom-1 input-terdekat-check"
-                                            type="checkbox" id="kustom-centang-${cloneCount}"
+                                            type="checkbox" id="kustom-centang-${cloneCount}" name="lainnya_centang[]"
                                             value="Lainnya">
                                         <label class="form-check-label label-terdekat"
                                             for="kustom-centang-${cloneCount}">
@@ -700,7 +672,7 @@
                             <div class="mb-3">
                                 <label for="gambar-centang-${cloneCount}" class="form-label label-terdekat tap">Gambar</label>
                                 <input type="file"
-                                class="form-control input-terdekat-gambar" name="gambar-centang-${cloneCount}" id="gambar-centang-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
+                                class="form-control input-terdekat-gambar" name="gambar_centang[]" id="gambar-centang-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
                             </div>
                              <button type="button" class="btn btn-danger delete-centang-card-edit">delete</button>
                         </div>
@@ -724,7 +696,6 @@
                 .attr('for', `pilihan-centang-${i}`)
                 .end()
                 .find('input.input-terdekat')
-                .attr('name', `pilihan-centang-${i}`)
                 .attr('id', `pilihan-centang-${i}`)
                 .attr('placeholder', `Masukkan Pilihan ${i}`)
                 .end()
@@ -732,21 +703,18 @@
                 .attr('for', `skip-centang-${i}`)
                 .end()
                 .find('input.input-terdekat-skip')
-                .attr('name', `skip-centang-${i}`)
                 .attr('id', `skip-centang-${i}`)
                 .end()
                 .find('label.label-terdekat-gambar')
                 .attr('for', `gambar-centang-${i}`)
                 .end()
                 .find('input.input-terdekat-gambar')
-                .attr('name', `gambar-centang-${i}`)
                 .attr('id', `gambar-centang-${i}`)
                 .end()
                 .find('label.label-terdekat-check')
                 .attr('for', `kustom-centang-${i}`)
                 .end()
                 .find('input.input-terdekat-check')
-                .attr('name', `kustom-centang-${i}`)
                 .attr('id', `kustom-centang-${i}`);
             });
          

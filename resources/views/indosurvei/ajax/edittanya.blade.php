@@ -39,21 +39,16 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="pilihan-1" class="form-label">Pilihan 1</label>
-                            <input type="text" class="form-control" name="pilihan-1" id="pilihan-1"
+                            <input type="text" class="form-control" name="pilihan[]" id="pilihan-1"
                                 aria-describedby="helpId" placeholder="Masukkan Pilihan 1">
                         </div>
                         <div class="row mb-3">
 
-                            <div class="col-6">
-                                <label for="skip-1" class="form-label">Skip
-                                    ke pertanyaan no.</label>
-                                <input type="number" class="form-control" name="skip-1" id="skip-1"
-                                    aria-describedby="helpId" placeholder="Masukkan No.">
-                            </div>
-
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="form-check">
-                                    <input class="form-check-input kustom-1" type="checkbox" id="kustom-1"
+                                    <input class="form-check-input kustom-1" type="checkbox" 
+                                    id="kustom-1"
+                                    name="lainnya[]"
                                         value="Lainnya">
                                     <label class="form-check-label" for="kustom">
                                         Kustom Jawaban
@@ -64,7 +59,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="gambar-1" class="form-label">Gambar</label>
-                            <input type="file" class="form-control" name="gambar-1" id="gambar-1"
+                            <input type="file" class="form-control" name="gambar[]" id="gambar-1"
                                 aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
                         </div>
                     </div>
@@ -80,21 +75,16 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="pilihan-centang-1" class="form-label">Pilihan 1</label>
-                            <input type="text" class="form-control" name="pilihan-centang-1" id="pilihan-centang-1"
+                            <input type="text" class="form-control" name="pilihan_centang[]" id="pilihan-centang-1"
                                 aria-describedby="helpId" placeholder="Masukkan Pilihan 1">
                         </div>
                         <div class="row mb-3">
 
-                            <div class="col-6">
-                                <label for="skip-centang-1" class="form-label">Skip
-                                    ke pertanyaan no.</label>
-                                <input type="number" class="form-control" name="skip-centang-1" id="skip-centang-1"
-                                    aria-describedby="helpId" placeholder="Masukkan No.">
-                            </div>
-
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="form-check">
-                                    <input class="form-check-input kustom-1" type="checkbox" id="kustom-centang-1"
+                                    <input class="form-check-input kustom-1" type="checkbox" 
+                                    id="kustom-centang-1"
+                                    name="lainnya_centang[]"
                                         value="Lainnya">
                                     <label class="form-check-label" for="kustom-centang-1">
                                         Kustom Jawaban
@@ -105,7 +95,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="gambar-centang-1" class="form-label">Gambar</label>
-                            <input type="file" class="form-control" name="gambar-centang-1" id="gambar-centang-1"
+                            <input type="file" class="form-control" name="gambar_centang[]" id="gambar-centang-1"
                                 aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
                         </div>
                     </div>
