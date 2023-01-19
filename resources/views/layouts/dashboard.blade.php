@@ -212,7 +212,7 @@
                     <li>
                         <a href="{{url('')}}/dashboard" class="box-style d-flex align-items-center">
                             <div class="icon">
-                                <img src="assets/images/icon/element.svg" alt="calendar">
+                                <img src="{{url('/')}}/assets/images/icon/element.svg" alt="calendar">
                             </div>
                             <span class="menu-title">Dashboard</span>
                         </a>
@@ -221,7 +221,7 @@
                     <li>
                         <a href="{{url('')}}/list-survey" class="box-style d-flex align-items-center">
                             <div class="icon">
-                                <img src="assets/images/icon/book.svg" alt="messages">
+                                <img src="{{url('/')}}/assets/images/icon/book.svg" alt="messages">
                             </div>
                             <span class="menu-title">Surveymu.</span>
                         </a>
