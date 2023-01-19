@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Multiplechoice;
+use App\Models\MultiplechoicesAnswer;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Question;
 use App\Models\ShortQuestion;
@@ -21,18 +22,32 @@ class UserController extends Controller
        
 
         // $data['question'] = Question::where('users_id',Auth::user()->id)->get();
-        $data['question'] = Survey::join('users', 'survey.users_id', '=', 'users.id')->where('users.id',Auth::user()->id)->get();
+        $data['question'] = Survey::where('users_id',Auth::user()->id)->get();
         return view('indosurvei.dashboard',$data);
      
     }
     public function action_survey(Request $request)
     {
+        // $request->validate([
+        //     'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        // ]);
+        if($request->hasFile('gambar')){
+            $request->validate([
+                'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+            $imageName = time().'.'.$request->gambar->extension();  
+            $request->gambar->move(public_path('images/background/survey'), $imageName);
+        }else{
+            $imageName = 'default.png';
+        }
+        
+
         $question = Survey::create([
            'title' => $request['judul'],
            'category' =>  $request['kategori'],
            'description' =>  $request['deskripsi'],
            'users_id' =>  Auth::user()->id,
-           'images' => 'default.png',
+           'images' =>  $imageName,
            'answer_id' => 0,
         ]);
         if ($question) {
@@ -71,18 +86,27 @@ class UserController extends Controller
          }
 
          if($request['tanya-tipe'] == 'Pilihan Ganda'){
-            // $question = Multiplechoice::create([
-            //     'question' => $request['tanya'],
-            //     'survey_id' => $id,
-            // ]);
-            // $Typesurvey = Typesurvey::create([
-            //     'survey_id' => $id,
-            //     'type' => $request['tanya-tipe'],
-            //     'question_id' =>  $question->id,
-            // ]);
-            // $n = count($request['answerField']);
+            $question = Multiplechoice::create([
+                'question' => $request['tanya'],
+                'survey_id' => $id,
+            ]);
+            $Typesurvey = Typesurvey::create([
+                'survey_id' => $id,
+                'type' => $request['tanya-tipe'],
+                'question_id' =>  $question->id,
+            ]);
+            $n = count($request['pilihan']);
+            for($i=0; $i < $n; $i++){
+                $answerMultiple = MultiplechoicesAnswer::create([
+                    'multiplechoices_id' => $question->id,
+                    'answer' => $request['pilihan'][$i],
+                    'survey_id' => $id,
+                    'images' => 'default.png',
+                ]);
+            }
+            Alert::success('Selamat', 'Item  Berhasil Di Tambahkan');
+            return redirect()->back();
 
-            
 
          }
 

@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class MultiplechoicesAnswer extends Model
 {
     use HasFactory;
+    
+    protected $guarded = ['id'];
 }

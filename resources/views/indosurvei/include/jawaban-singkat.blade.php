@@ -14,7 +14,7 @@ $question = ShortQuestion::find($id_question);
     <div class="d-flex">
         <div class="flex-shrink-0">
             <h5>
-                {{$id_question}}
+                {{$l++}}
             </h5>
         </div>
         <div class="flex-grow-1 ms-3">

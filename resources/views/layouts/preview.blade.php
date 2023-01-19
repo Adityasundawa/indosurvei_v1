@@ -208,84 +208,128 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
     <script>
+
+        
+
         $('.ambil-survey').on('click', function () {
             $('.judul-thumb').removeClass('d-none');
-            $('.next-to-q2').removeClass('d-none');
+            $('.next-to-q').removeClass('d-none');
             $('.first-page').addClass('d-none');
             $('.ambil-survey').addClass('d-none');
             $('.judul-thumb').removeClass('d-none');
-            $('.question-1').removeClass('d-none');
+            $('.question-1').show("100")
         })
 
-        $('.next-to-q2').on('click', function () {
-            $('.next-to-q2').addClass('d-none');
-            $('.question-1').addClass('d-none');
-            $('.question-2').removeClass('d-none');
-            $('.next-to-q3').removeClass('d-none');
-            $('.back-to-q1').removeClass('d-none');
+        $('.next-to-q').on('click', function () {
+            // $('.next-to-q2').addClass('d-none');
+            // $('.question-1').addClass('d-none');
+            // $('.question-2').removeClass('d-none');
+            // $('.next-to-q3').removeClass('d-none');
+            // $('.back-to-q1').removeClass('d-none');
+
+            $('div.active').hide('100',function(){
+                let active = $(this);
+                let index = active.data('index');
+               
+                    active.removeClass('active');
+                    // let question = active.attr('class').split(' ')[0];
+                    $(`.question-${index +1}`).show('100',function(){
+                        $(`.question-${index +1}`).addClass('active');
+
+                        setTimeout(() => {
+                            if($(`.question-${index +1}.active`)){
+                                $('.back-to-q').removeClass('d-none').show()
+                            }
+                            if($('.survey').length == parseInt($(`.question-${index +1}`).data('index'))){
+                                $('.next-to-q').hide();
+                                $('button.submit').removeClass('d-none').show()
+                            }
+                        }, 200);
+                
+
+
+                    });
+                  
+                
+            });
+
         })
 
-        $('.back-to-q1').on('click', function () {
-            $('.next-to-q2').removeClass('d-none');
-            $('.question-1').removeClass('d-none');
-            $('.question-2').addClass('d-none');
-            $('.next-to-q3').addClass('d-none');
-            $('.back-to-q1').addClass('d-none');
+        $('.back-to-q').on('click', function () {
+                let active = $('div.active');
+                let index = active.data('index');
+                $('.next-to-q').show() 
+                $('button.submit').addClass('d-none')  
+
+                active.hide('100')
+                active.removeClass('active');
+                // let question = active.attr('class').split(' ')[0];
+                $(`.question-${index - 1}`).show('100');
+                $(`.question-${index - 1}`).addClass('active');
+
+                setTimeout(() => {
+                if($(`.question-1.active`).length == 1){
+                    $('.back-to-q').hide()
+                }
+               }, 200);
+                
+
+                
         })
         
-        $('.next-to-q3').on('click', function () {
-            $('.next-to-q3').addClass('d-none');
-            $('.question-2').addClass('d-none');
-            $('.back-to-q1').addClass('d-none');
-            $('.question-3').removeClass('d-none');
-            $('.next-to-q4').removeClass('d-none');
-            $('.back-to-q2').removeClass('d-none');
-        })
+        // $('.next-to-q3').on('click', function () {
+        //     $('.next-to-q3').addClass('d-none');
+        //     $('.question-2').addClass('d-none');
+        //     $('.back-to-q1').addClass('d-none');
+        //     $('.question-3').removeClass('d-none');
+        //     $('.next-to-q4').removeClass('d-none');
+        //     $('.back-to-q2').removeClass('d-none');
+        // })
 
-        $('.back-to-q2').on('click', function () {
-            $('.next-to-q3').removeClass('d-none');
-            $('.question-2').removeClass('d-none');
-            $('.back-to-q1').removeClass('d-none');
-            $('.question-3').addClass('d-none');
-            $('.next-to-q4').addClass('d-none');
-            $('.back-to-q2').addClass('d-none');
-        })
+        // $('.back-to-q2').on('click', function () {
+        //     $('.next-to-q3').removeClass('d-none');
+        //     $('.question-2').removeClass('d-none');
+        //     $('.back-to-q1').removeClass('d-none');
+        //     $('.question-3').addClass('d-none');
+        //     $('.next-to-q4').addClass('d-none');
+        //     $('.back-to-q2').addClass('d-none');
+        // })
 
-        $('.next-to-q4').on('click', function () {
-            $('.next-to-q4').addClass('d-none');
-            $('.question-3').addClass('d-none');
-            $('.back-to-q2').addClass('d-none');
-            $('.question-4').removeClass('d-none');
-            $('.next-to-q5').removeClass('d-none');
-            $('.back-to-q3').removeClass('d-none');
-        })
+        // $('.next-to-q4').on('click', function () {
+        //     $('.next-to-q4').addClass('d-none');
+        //     $('.question-3').addClass('d-none');
+        //     $('.back-to-q2').addClass('d-none');
+        //     $('.question-4').removeClass('d-none');
+        //     $('.next-to-q5').removeClass('d-none');
+        //     $('.back-to-q3').removeClass('d-none');
+        // })
 
-        $('.back-to-q3').on('click', function () {
-            $('.next-to-q4').removeClass('d-none');
-            $('.question-3').removeClass('d-none');
-            $('.back-to-q2').removeClass('d-none');
-            $('.question-4').addClass('d-none');
-            $('.next-to-q5').addClass('d-none');
-            $('.back-to-q3').addClass('d-none');
-        })
+        // $('.back-to-q3').on('click', function () {
+        //     $('.next-to-q4').removeClass('d-none');
+        //     $('.question-3').removeClass('d-none');
+        //     $('.back-to-q2').removeClass('d-none');
+        //     $('.question-4').addClass('d-none');
+        //     $('.next-to-q5').addClass('d-none');
+        //     $('.back-to-q3').addClass('d-none');
+        // })
 
-        $('.next-to-q5').on('click', function () {
-            $('.next-to-q5').addClass('d-none');
-            $('.question-4').addClass('d-none');
-            $('.back-to-q3').addClass('d-none');
-            $('.question-5').removeClass('d-none');
-            $('.submit').removeClass('d-none');
-            $('.back-to-q4').removeClass('d-none');
-        })
+        // $('.next-to-q5').on('click', function () {
+        //     $('.next-to-q5').addClass('d-none');
+        //     $('.question-4').addClass('d-none');
+        //     $('.back-to-q3').addClass('d-none');
+        //     $('.question-5').removeClass('d-none');
+        //     $('.submit').removeClass('d-none');
+        //     $('.back-to-q4').removeClass('d-none');
+        // })
 
-        $('.back-to-q4').on('click', function () {
-            $('.next-to-q5').removeClass('d-none');
-            $('.question-4').removeClass('d-none');
-            $('.back-to-q3').removeClass('d-none');
-            $('.question-5').addClass('d-none');
-            $('.submit').addClass('d-none');
-            $('.back-to-q4').addClass('d-none');
-        })
+        // $('.back-to-q4').on('click', function () {
+        //     $('.next-to-q5').removeClass('d-none');
+        //     $('.question-4').removeClass('d-none');
+        //     $('.back-to-q3').removeClass('d-none');
+        //     $('.question-5').addClass('d-none');
+        //     $('.submit').addClass('d-none');
+        //     $('.back-to-q4').addClass('d-none');
+        // })
 
         "use strict";
 

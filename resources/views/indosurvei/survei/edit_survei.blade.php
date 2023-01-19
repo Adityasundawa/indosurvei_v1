@@ -11,7 +11,14 @@
         <div class="row">
             <div class="col-12 mb-5">
                 <div class="card">
-                    <div class="card-header bg-thumb-big">
+                    @if ($question['images'] == 'default.png')
+                    <div class="card-header  bg-thumb-big" >
+                    @else
+                    <div class="card-header  bg-thumb-big" style="background-image: url('{{url('/')}}/images/background/survey/{{$question['images']}}') ">
+                    @endif
+              
+
+               
                         <div class="row">
                             <div class="col-6">
                                 <h2>
@@ -102,11 +109,11 @@
                                                                 id="tanya-tipe">
                                                                 <option value="Jawaban Singkat">Jawaban Singkat</option>
                                                                 <option value="Pilihan Ganda">Pilihan Ganda</option>
-                                                                <option value="Kotak Centang">Kotak Centang</option>
+                                                                {{-- <option value="Kotak Centang">Kotak Centang</option>
                                                                 <option value="Unggah Gambar">Unggah Gambar</option>
                                                                 <option value="Skala">Skala</option>
                                                                 <option value="Lembar Persetujuan">Lembar Persetujuan
-                                                                </option>
+                                                                </option> --}}
                                                             </select>
                                                         </div>
 
@@ -669,11 +676,19 @@
                                 @if (count($type_survey) == 0)
                                 @include('indosurvei.include.null-survei')
                                 @endif
+                                <?php $l = 1 ?>
                                 @foreach ($type_survey as $type)
+                                
                                 @if ($type['type'] == "Jawaban Singkat")
                                 <?php $id_question = $type['question_id']?>
                                 @include('indosurvei.include.jawaban-singkat')
                                 @endif
+
+                                @if ($type['type'] == "Pilihan Ganda")
+                                <?php $id_question = $type['question_id']?>
+                                @include('indosurvei.include.pilihan-ganda')
+                                @endif
+
 
                                 @endforeach
                             </div>
