@@ -68,4 +68,10 @@ Route::group(['middleware' => 'auth.check'], function () {
 
 
     Route::post('action/survey/question/', [UserController::class, 'action_survey'])->name('action.survey.question');
+
+
+
+    Route::get('/ajax/get_edit', [UserController::class, 'get_edit'])->name('edit.get_edit');
+    Route::delete('/delete/short_question/{id}',[UserController::class, 'delete_short_question'])->name('delete.delete_short_question');
+    Route::patch('/edit/short_question/{id}', [UserController::class, 'update_short_question'])->name('edit.short_question');
 });

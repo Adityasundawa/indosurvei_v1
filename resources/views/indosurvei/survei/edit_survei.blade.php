@@ -1,11 +1,11 @@
 @extends('layouts.dashboard')
 @section('content')
 
- @if(Session::has('message'))
- <div class="alert alert-primary" role="alert">
-   Berhasil Membuat Survei  
-  </div>
- @endif
+@if(Session::has('message'))
+<div class="alert alert-primary" role="alert">
+    Berhasil Membuat Survei
+</div>
+@endif
 <div class="features-area mb-5">
     <div class="container-fluid">
         <div class="row">
@@ -84,9 +84,11 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
-                                                <form action="{{url('/')}}/dashboard/action/survei/{{Crypt::encrypt($id)}}" method="POST"> 
+                                                <form
+                                                    action="{{url('/')}}/dashboard/action/survei/{{Crypt::encrypt($id)}}"
+                                                    method="POST">
                                                     @csrf
-                                                <div class="modal-body text-start">
+                                                    <div class="modal-body text-start">
                                                         <div class="mb-3">
                                                             <label for="gambar" class="form-label">Pilih Gambar
                                                                 Pertanyaan</label>
@@ -268,14 +270,15 @@
                                                             </div>
                                                         </div>
 
-                                                   
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Save changes</button>
-                                                </div>
-                                            </form>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save
+                                                            changes</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -294,7 +297,7 @@
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-pertanyaan" role="tabpanel"
                                 aria-labelledby="pills-pertanyaan-tab" tabindex="0">
-{{-- 
+                                {{-- 
                                 <div class="row">
                                     <div class="col-12 border-bottom cus-hov p-3 edit-tanya" data-type="Jawaban Singkat"
                                         data-type-class="jawaban-singkat-edit" data-bs-toggle="modal"
@@ -687,14 +690,14 @@
                                 @include('indosurvei.include.null-survei')
                                 @endif
                                 @foreach ($type_survey as $type)
-                                    @if ($type['type'] == "Jawaban Singkat")
-                                    <?php $id_question = $type['question_id']?>
-                                    @include('indosurvei.include.jawaban-singkat')
-                                    @endif
+                                @if ($type['type'] == "Jawaban Singkat")
+                                <?php $id_question = $type['question_id']?>
+                                @include('indosurvei.include.jawaban-singkat')
+                                @endif
 
                                 @endforeach
                             </div>
-                                  
+
                             <div class="tab-pane fade" id="pills-pengaturan" role="tabpanel"
                                 aria-labelledby="pills-pengaturan-tab" tabindex="0">
 
@@ -729,21 +732,22 @@
                                                     <div class="col-md-3 fw-bold">Judul Survey</div>
                                                     <div class="col-md">
                                                         <input type="text" class="form-control" name="judul" id="judul"
-                                                            value="Judul">
+                                                            value="{{$question['title']}}">
                                                     </div>
                                                 </div>
                                                 <div class="row align-items-center mb-4">
                                                     <div class="col-md-3 fw-bold">Dekripsi</div>
                                                     <div class="col-md">
                                                         <textarea name="deskripsi" id="deskripsi" rows="3"
-                                                            class="form-control">Deskripsi</textarea>
+                                                            class="form-control"> {{$question['description']}}</textarea>
                                                     </div>
                                                 </div>
                                                 <div class="row align-items-center mb-4">
                                                     <div class="col-md-3 fw-bold">Kategori</div>
                                                     <div class="col-md">
                                                         <select id="kategori" class="form-select form-control">
-                                                            <option selected="" disabled>Pilih Kategori</option>
+                                                            <option selected value="{{$question['category']}}">
+                                                                {{$question['category']}}</option>
                                                             <option value="Bisnis & E-Commerce">Bisnis & E-Commerce
                                                             </option>
                                                             <option value="Pendidikan">Pendidikan</option>
@@ -951,131 +955,131 @@
                                         <h4 class="mt-4">3 Jawaban</h4>
                                         <div class="table-responsive mb-3">
                                             <table class="table table-bordered table-striped">
-                                            <tr class="1st-page">
-                                                <th style="width: 100px">Pertanyaan</th>
-                                                <th style="width: 200px">
-                                                    <div class="row">
-                                                        <div class="col">email1@gmail.com</div>
-                                                        <div class="col text-end">x</div>
-                                                    </div>
-                                                </th>
-                                                <th style="width: 200px">
-                                                    <div class="row">
-                                                        <div class="col">email2@gmail.com</div>
-                                                        <div class="col text-end">x</div>
-                                                    </div>
-                                                </th>
-                                            </tr>
-                                            <tr class="1st-page">
-                                                <td>
-                                                    1. Jawaban Singkat 
-                                                </td>
-                                                <td>
-                                                    Jawaban 1
-                                                </td>
-                                                <td>
-                                                    Jawaban 2
-                                                </td>
-                                            </tr>
-                                            <tr class="1st-page">
-                                                <td>
-                                                    2. Pilihan Ganda 
-                                                </td>
-                                                <td>
-                                                    P3
-                                                </td>
-                                                <td>
-                                                    P1
-                                                </td>
-                                            </tr>
-                                            <tr class="1st-page">
-                                                <td>
-                                                    3. Kotak Centang 
-                                                </td>
-                                                <td>
-                                                    K2, K3
-                                                </td>
-                                                <td>
-                                                    K2, Hehe
-                                                </td>
-                                            </tr>
-                                            <tr class="1st-page">
-                                                <td>
-                                                    4. Unggah Gambar 
-                                                </td>
-                                                <td>
-                                                    https://storage.googleapis.com/smart-survey-files/answer-image-files/BXvwE2mQcagFnXaPmTzBpBjafNSxCfWZ.jpg
-                                                </td>
-                                                <td>
-                                                    https://storage.googleapis.com/smart-survey-files/answer-image-files/8TYj5g1PBhgmLMWaWEtfdK9ip10HBVLh.jpg
-                                                </td>
-                                            </tr>
-                                            <tr class="1st-page">
-                                                <td>5. Skala</td>
-                                                <td>6</td>
-                                                <td>3</td>
-                                            </tr>
-                                            <tr class="2nd-page d-none">
-                                                <th style="width: 100px">Pertanyaan</th>
-                                                <th style="width: 200px">
-                                                    <div class="row">
-                                                        <div class="col">email3@gmail.com</div>
-                                                        <div class="col text-end">x</div>
-                                                    </div>
-                                                </th>
-                                                <th style="width: 200px">
-                                                    <div class="row">
-                                                        <div class="col"></div>
-                                                        <div class="col text-end"></div>
-                                                    </div>
-                                                </th>
-                                            </tr>
-                                            <tr class="2nd-page d-none">
-                                                <td>
-                                                    1. Jawaban Singkat 
-                                                </td>
-                                                <td>
-                                                    Jawaban 3
-                                                </td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                            <tr class="2nd-page d-none">
-                                                <td>
-                                                    2. Pilihan Ganda 
-                                                </td>
-                                                <td>
-                                                    P4
-                                                </td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                            <tr class="2nd-page d-none">
-                                                <td>
-                                                    3. Kotak Centang 
-                                                </td>
-                                                <td>
-                                                    K2, K3
-                                                </td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                            <tr class="2nd-page d-none">
-                                                <td>
-                                                    4. Unggah Gambar 
-                                                </td>
-                                                <td>
-                                                    https://storage.googleapis.com/smart-survey-files/answer-image-files/BXvwE2mQcagFnXaPmTzBpBjafNSxCfWZ.jpg
-                                                </td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                            <tr class="2nd-page d-none">
-                                                <td>5. Skala</td>
-                                                <td>6</td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
+                                                <tr class="1st-page">
+                                                    <th style="width: 100px">Pertanyaan</th>
+                                                    <th style="width: 200px">
+                                                        <div class="row">
+                                                            <div class="col">email1@gmail.com</div>
+                                                            <div class="col text-end">x</div>
+                                                        </div>
+                                                    </th>
+                                                    <th style="width: 200px">
+                                                        <div class="row">
+                                                            <div class="col">email2@gmail.com</div>
+                                                            <div class="col text-end">x</div>
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                                <tr class="1st-page">
+                                                    <td>
+                                                        1. Jawaban Singkat
+                                                    </td>
+                                                    <td>
+                                                        Jawaban 1
+                                                    </td>
+                                                    <td>
+                                                        Jawaban 2
+                                                    </td>
+                                                </tr>
+                                                <tr class="1st-page">
+                                                    <td>
+                                                        2. Pilihan Ganda
+                                                    </td>
+                                                    <td>
+                                                        P3
+                                                    </td>
+                                                    <td>
+                                                        P1
+                                                    </td>
+                                                </tr>
+                                                <tr class="1st-page">
+                                                    <td>
+                                                        3. Kotak Centang
+                                                    </td>
+                                                    <td>
+                                                        K2, K3
+                                                    </td>
+                                                    <td>
+                                                        K2, Hehe
+                                                    </td>
+                                                </tr>
+                                                <tr class="1st-page">
+                                                    <td>
+                                                        4. Unggah Gambar
+                                                    </td>
+                                                    <td>
+                                                        https://storage.googleapis.com/smart-survey-files/answer-image-files/BXvwE2mQcagFnXaPmTzBpBjafNSxCfWZ.jpg
+                                                    </td>
+                                                    <td>
+                                                        https://storage.googleapis.com/smart-survey-files/answer-image-files/8TYj5g1PBhgmLMWaWEtfdK9ip10HBVLh.jpg
+                                                    </td>
+                                                </tr>
+                                                <tr class="1st-page">
+                                                    <td>5. Skala</td>
+                                                    <td>6</td>
+                                                    <td>3</td>
+                                                </tr>
+                                                <tr class="2nd-page d-none">
+                                                    <th style="width: 100px">Pertanyaan</th>
+                                                    <th style="width: 200px">
+                                                        <div class="row">
+                                                            <div class="col">email3@gmail.com</div>
+                                                            <div class="col text-end">x</div>
+                                                        </div>
+                                                    </th>
+                                                    <th style="width: 200px">
+                                                        <div class="row">
+                                                            <div class="col"></div>
+                                                            <div class="col text-end"></div>
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                                <tr class="2nd-page d-none">
+                                                    <td>
+                                                        1. Jawaban Singkat
+                                                    </td>
+                                                    <td>
+                                                        Jawaban 3
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr class="2nd-page d-none">
+                                                    <td>
+                                                        2. Pilihan Ganda
+                                                    </td>
+                                                    <td>
+                                                        P4
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr class="2nd-page d-none">
+                                                    <td>
+                                                        3. Kotak Centang
+                                                    </td>
+                                                    <td>
+                                                        K2, K3
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr class="2nd-page d-none">
+                                                    <td>
+                                                        4. Unggah Gambar
+                                                    </td>
+                                                    <td>
+                                                        https://storage.googleapis.com/smart-survey-files/answer-image-files/BXvwE2mQcagFnXaPmTzBpBjafNSxCfWZ.jpg
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr class="2nd-page d-none">
+                                                    <td>5. Skala</td>
+                                                    <td>6</td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
                                         </div>
                                         <nav aria-label="Page navigation example">
                                             <ul class="pagination custom-style">
@@ -1087,7 +1091,7 @@
                                         </nav>
                                     </div>
                                 </div>
-                                
+
                                 {{-- show if there is no data --}}
                                 {{-- <div class="row align-items-center">
                                     <div class="col-12 text-center py-5">
@@ -1253,4 +1257,16 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade " id="editTanya" tabindex="-1" aria-labelledby="tambahTanyaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div id="loading">Loading...</div>
+        <div class="modal-content" id="content-editTanya">
+
+        </div>
+    </div>
+</div>
+
+
+
 @endsection

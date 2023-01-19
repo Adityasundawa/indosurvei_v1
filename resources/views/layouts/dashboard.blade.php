@@ -305,7 +305,8 @@
     <script src="{{url('/')}}/assets/js/ajaxchimp.min.js"></script>
     <script src="{{url('/')}}/assets/js/custom.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-@include('sweetalert::alert')
+      @include('sweetalert::alert')
+     <script src="{{url('/')}}/assets/js/sweetalert2.all.min.js"></script>
     <script>
         $(".kelas-tab-atas").on('click', function() {
             if ($(this).text().toLowerCase() == 'pertanyaan') {
@@ -758,7 +759,6 @@
             $(`.adhd`).addClass('d-none');
             $(`.${dataTypeClass}`).removeClass('d-none');
         });
-
         $(document).find('a.number').on('click', function() {
             if ($(this).text() == "1") {
                 $('tr.1st-page').removeClass('d-none')
@@ -769,8 +769,74 @@
                 $('tr.2nd-page').removeClass('d-none')
             }
         })
-
     </script>
+
+
+
+  {{-- CRUD ADITYA --}}
+<script>
+    $('div.edit-tanya').on('click', function () {
+        let id = $(this).data('id');
+        $.ajax({
+            url: '{{url("/")}}/ajax/get_edit',
+            type: "GET",
+            data: {
+                id
+            },
+            success: function (response) {
+                if (response) {
+                    $('#content-editTanya').html(response);
+                }
+            }
+        });
+    });
+</script>
+
+<script>
+    $(document).on('click','button.btn-delete', function (e) {
+    e.preventDefault();
+    let id = $(this).data('id');
+    let url = '{{url("/")}}/delete/short_question/' + id;
+    Swal.fire({
+        title: 'Apakah Anda Yakin?',
+        text: "Ingin menghapus item ini",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ya, Hapus!'
+    }).then((result) => {
+        if (result.value) {
+            // Send DELETE request to server
+            $.ajax({
+                url: url,
+                type: 'DELETE',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                success: function (data) {
+                    // Show success message and reload page
+                    Swal.fire(
+                        'Terhapus!',
+                        'Item Berhasil Di Hapus.',
+                        'success'
+                    ).then(() => {
+                        location.reload();
+                    });
+                },
+                error: function (data) {
+                    // Show error message
+                    Swal.fire(
+                        'Error!',
+                        'There was an error deleting your item.',
+                        'error'
+                    );
+                }
+            });
+        }
+    });
+});
+</script>
 
 </body>
 
