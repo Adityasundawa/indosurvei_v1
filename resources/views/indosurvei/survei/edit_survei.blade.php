@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <h2>
-                                    {{$question['title']}}??
+                                    {{$question['title']}}
                                 </h2>
                             </div>
                             <div class="col-6 text-end">
@@ -97,12 +97,6 @@
                                                     @csrf
                                                     <div class="modal-body text-start">
                                                         <div class="mb-3">
-                                                            <label for="gambar" class="form-label">Pilih Gambar
-                                                                Pertanyaan</label>
-                                                            <input type="file" class="form-control" style="height: auto"
-                                                                name="gambar" id="gambar" placeholder="Pilih Gambar">
-                                                        </div>
-                                                        <div class="mb-3">
                                                             <label for="tanya-tipe" class="form-label">Tipe
                                                                 Pertanyaan</label>
                                                             <select class="form-select tipe-tanya" name="tanya-tipe"
@@ -154,15 +148,6 @@
                                                                             </div>
 
                                                                         </div>
-                                                                        <div class="mb-3">
-                                                                            <label for="gambar-1"
-                                                                                class="form-label">Gambar</label>
-                                                                            <input type="file" class="form-control"
-                                                                                name="gambar[]" id="gambar-1"
-                                                                                aria-describedby="helpId"
-                                                                                style="height: auto"
-                                                                                placeholder="Masukkan Gambar">
-                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -202,16 +187,6 @@
                                                                                 </div>
                                                                             </div>
 
-                                                                        </div>
-                                                                        <div class="mb-3">
-                                                                            <label for="gambar-centang-1"
-                                                                                class="form-label">Gambar</label>
-                                                                            <input type="file" class="form-control"
-                                                                                name="gambar_centang[]"
-                                                                                id="gambar-centang-1"
-                                                                                aria-describedby="helpId"
-                                                                                style="height: auto"
-                                                                                placeholder="Masukkan Gambar">
                                                                         </div>
                                                                     </div>
                                                                 </div>

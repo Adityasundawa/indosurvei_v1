@@ -33,7 +33,7 @@
         .bg-thumb {
             height: 125px;
             background-image: url("https://media.istockphoto.com/id/1357365823/vector/default-image-icon-vector-missing-picture-page-for-website-design-or-mobile-app-no-photo.jpg?s=612x612&w=0&k=20&c=PM_optEhHBTZkuJQLlCjLz-v3zzxp-1mpNQZsdjrbns=");
-            background-size: contain;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat
         }
@@ -41,7 +41,7 @@
         .bg-thumb-big {
             height: 195px;
             background-image: url("https://media.istockphoto.com/id/1357365823/vector/default-image-icon-vector-missing-picture-page-for-website-design-or-mobile-app-no-photo.jpg?s=612x612&w=0&k=20&c=PM_optEhHBTZkuJQLlCjLz-v3zzxp-1mpNQZsdjrbns=");
-            background-size: contain;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat
         }
@@ -434,11 +434,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="gambar-${cloneCount}" class="form-label label-terdekat tap">Gambar</label>
-                                <input type="file"
-                                class="form-control input-terdekat-gambar" name="gambar[]" id="gambar-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
-                            </div>
                              <button type="button" class="btn btn-danger delete-card">delete</button>
                         </div>
                     </div>`
@@ -517,11 +512,6 @@
                                 </div>
 
                             </div>
-                            <div class="mb-3">
-                                <label for="gambar-centang-${cloneCount}" class="form-label label-terdekat tap">Gambar</label>
-                                <input type="file"
-                                class="form-control input-terdekat-gambar" name="gambar_centang[]" id="gambar-centang-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
-                            </div>
                              <button type="button" class="btn btn-danger delete-centang-card">delete</button>
                         </div>
                     </div>`
@@ -552,12 +542,6 @@
                 .end()
                 .find('input.input-terdekat-skip')
                 .attr('id', `skip-centang-${i}`)
-                .end()
-                .find('label.label-terdekat-gambar')
-                .attr('for', `gambar-centang-${i}`)
-                .end()
-                .find('input.input-terdekat-gambar')
-                .attr('id', `gambar-centang-${i}`)
                 .end()
                 .find('label.label-terdekat-check')
                 .attr('for', `kustom-centang-${i}`)
@@ -591,11 +575,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="gambar-${cloneCount}" class="form-label label-terdekat tap">Gambar</label>
-                                <input type="file"
-                                class="form-control input-terdekat-gambar" name="gambar[]" id="gambar-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
-                            </div>
                              <button type="button" class="btn btn-danger delete-card-edit">delete</button>
                         </div>
                     </div>`
@@ -626,12 +605,6 @@
                 .end()
                 .find('input.input-terdekat-skip')
                 .attr('id', `skip-${i}`)
-                .end()
-                .find('label.label-terdekat-gambar')
-                .attr('for', `gambar-${i}`)
-                .end()
-                .find('input.input-terdekat-gambar')
-                .attr('id', `gambar-${i}`)
                 .end()
                 .find('label.label-terdekat-check')
                 .attr('for', `kustom-${i}`)
@@ -668,11 +641,6 @@
                                 </div>
 
                             </div>
-                            <div class="mb-3">
-                                <label for="gambar-centang-${cloneCount}" class="form-label label-terdekat tap">Gambar</label>
-                                <input type="file"
-                                class="form-control input-terdekat-gambar" name="gambar_centang[]" id="gambar-centang-${cloneCount}" aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
-                            </div>
                              <button type="button" class="btn btn-danger delete-centang-card-edit">delete</button>
                         </div>
                     </div>`
@@ -703,12 +671,6 @@
                 .end()
                 .find('input.input-terdekat-skip')
                 .attr('id', `skip-centang-${i}`)
-                .end()
-                .find('label.label-terdekat-gambar')
-                .attr('for', `gambar-centang-${i}`)
-                .end()
-                .find('input.input-terdekat-gambar')
-                .attr('id', `gambar-centang-${i}`)
                 .end()
                 .find('label.label-terdekat-check')
                 .attr('for', `kustom-centang-${i}`)

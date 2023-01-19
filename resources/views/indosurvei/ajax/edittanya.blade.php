@@ -8,12 +8,6 @@
     {{ method_field('patch') }}
     {{ csrf_field() }}
         <div class="mb-3">
-            <label for="gambar" class="form-label">Pilih Gambar
-                Pertanyaan</label>
-            <input type="file" class="form-control" style="height: auto" name="gambar" id="gambar"
-                placeholder="Pilih Gambar">
-        </div>
-        <div class="mb-3">
             <label for="tanya-tipe" class="form-label">Tipe
                 Pertanyaan</label>
             <select class="form-select tipe-tanya-edit" name="tanya-tipe" id="tanya-tipe">
@@ -57,11 +51,6 @@
                             </div>
 
                         </div>
-                        <div class="mb-3">
-                            <label for="gambar-1" class="form-label">Gambar</label>
-                            <input type="file" class="form-control" name="gambar[]" id="gambar-1"
-                                aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -92,11 +81,6 @@
                                 </div>
                             </div>
 
-                        </div>
-                        <div class="mb-3">
-                            <label for="gambar-centang-1" class="form-label">Gambar</label>
-                            <input type="file" class="form-control" name="gambar_centang[]" id="gambar-centang-1"
-                                aria-describedby="helpId" style="height: auto" placeholder="Masukkan Gambar">
                         </div>
                     </div>
                 </div>
