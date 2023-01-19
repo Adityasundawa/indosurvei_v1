@@ -37,7 +37,7 @@
     <body class="body-bg-f8faff">
 		<!-- Start Preloader Area -->
 		<div class="preloader">
-            <img src="assets/images/main-logo.svg" alt="main-logo">
+            <img src="{{url('/')}}/assets/logo/logo.png" alt="main-logo">
         </div>
 		<!-- End Preloader Area -->
 
@@ -53,8 +53,10 @@
                                 </a>
                                 <h3>Log In</h3>
                             </div>
+                            <x-jet-validation-errors class="alert alert-danger" />
 
-                            <form class="account-wrap">
+                            <form class="account-wrap" action="{{ route('login') }}" method="POST">
+                                @csrf
                                 <div class="form-group mb-24 icon">
                                     <input type="email" class="form-control" placeholder="Email" id="email" name="email" :value="old('email')" required autofocus>
                                     <img src="assets/images/icon/sms.svg" alt="sms">
@@ -77,10 +79,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group mb-24">
-                                    <button type="submit" class="default-btn">Log In</button>
+                                    <button type="submit" class="default-btn">{{ __('Log in') }}</button>
                                 </div>
                                 <div class="form-group mb-24 text-center">
-                                    <p class="account">Not A Member? <a href="register.html">Create An Account</a></p>
+                                    <p class="account">Not A Member? <a href="{{url('')}}/register">Create An Account</a></p>
                                 </div>
                             </form>
 
