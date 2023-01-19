@@ -31,7 +31,7 @@
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="assets/images/favicon.svg">
 		<!-- Title -->
-		<title>Indo Survei</title>
+		<title>Indosurvei</title>
     </head>
 
     <body class="body-bg-f8faff">
