@@ -22,7 +22,6 @@ class UserController extends Controller
         return view('indosurvei.dashboard',$data);
      
     }
-
     public function action_survey(Request $request)
     {
         $question = Survey::create([
