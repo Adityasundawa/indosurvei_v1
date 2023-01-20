@@ -9,8 +9,8 @@ $question = Multiplechoice::find($id_question);
 $answer = MultiplechoicesAnswer::where('multiplechoices_id',$question->id)->get();
 ?>
 
-<div class="col-12 border-bottom cus-hov p-3 edit-tanya" data-type="Pilihan Ganda" data-type-class="pilihan-ganda-edit"
-    data-bs-toggle="modal" data-bs-target="#editTanya">
+<div class="col-12 border-bottom cus-hov p-3 edit-tanya-pilihan-ganda" data-type="Pilihan Ganda" data-type-class="pilihan-ganda-edit"
+    data-bs-toggle="modal" data-bs-target="#editTanya-pilihan-ganda"  data-id="{{$id_question}}">
     <div class="d-flex">
         <div class="flex-shrink-0">
             <h5>

@@ -12,254 +12,258 @@
             <div class="col-12 mb-5">
                 <div class="card">
                     @if ($question['images'] == 'default.png')
-                    <div class="card-header  bg-thumb-big" >
-                    @else
-                    <div class="card-header  bg-thumb-big" style="background-image: url('{{url('/')}}/images/background/survey/{{$question['images']}}') ">
-                    @endif
-              
+                    <div class="card-header  bg-thumb-big">
+                        @else
+                        <div class="card-header  bg-thumb-big"
+                            style="background-image: url('{{url('/')}}/images/background/survey/{{$question['images']}}') ">
+                            @endif
 
-               
-                        <div class="row">
-                            <div class="col-6">
-                                <h2>
-                                    {{$question['title']}}
-                                </h2>
-                            </div>
-                            <div class="col-6 text-end">
-                                <a href="#">Ubah Background <i class="ri-edit-2-fill"></i></a>
-                            </div>
-                            <div class="col-md-12 mb-5">
-                                <h6> {{$question['description']}}</h6>
-                            </div>
-                            <div class="col-md-12 text-end">
-                                <button class="btn btn-outline-primary">Download</button>
-                                <a href="" class="btn btn-outline-primary">Preview</a>
-                                <a href="{{url('')}}/share/{{Crypt::encrypt($id)}}" class="btn btn-primary">Shares</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer border-top border-bottom">
-                        <div class="row align-items-center">
-                            <div class="col-md-4 text-center py-1 mb-1 mt-1">
-                                <div class="row nav nav-pills g-0 align-items-center p-0 bg-white rounded-5">
-                                    <div class="col">
-                                        <button class="nav-link rounded-5 p-0 px-1 w-100 kelas-tab-atas active"
-                                            id="pills-pertanyaan-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-pertanyaan" type="button" role="tab"
-                                            aria-controls="pills-pertanyaan" aria-selected="true">Pertanyaan</button>
-                                    </div>
-                                    <div class="col">
-                                        <button class="nav-link rounded-5 p-0 px-1 w-100 kelas-tab-atas"
-                                            id="pills-pengaturan-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-pengaturan" type="button" role="tab"
-                                            aria-controls="pills-pengaturan" aria-selected="false">Pengaturan</button>
-                                    </div>
-                                    <div class="col">
-                                        <button class="nav-link rounded-5 p-0 px-1 w-100 kelas-tab-atas"
-                                            id="pills-jawaban-tab" data-bs-toggle="pill" data-bs-target="#pills-jawaban"
-                                            type="button" role="tab" aria-controls="pills-jawaban"
-                                            aria-selected="false">Jawaban</button>
-                                    </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h2>
+                                        {{$question['title']}}
+                                    </h2>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <a href="#">Ubah Background <i class="ri-edit-2-fill"></i></a>
+                                </div>
+                                <div class="col-md-12 mb-5">
+                                    <h6> {{$question['description']}}</h6>
+                                </div>
+                                <div class="col-md-12 text-end">
+                                    <button class="btn btn-outline-primary">Download</button>
+                                    <a href="" class="btn btn-outline-primary">Preview</a>
+                                    <a href="{{url('')}}/share/{{Crypt::encrypt($id)}}"
+                                        class="btn btn-primary">Shares</a>
                                 </div>
                             </div>
-                            <div class="col-md text-end mt-1 mb-1">
-                                <div class="row g-1 justify-content-end">
-                                    <div class="col-auto change-1">
-                                        <a href="#" class="btn py-1 w-100 btn-outline-primary">
-                                            <i class="ri-vip-crown-line"></i>
-                                        </a>
+                        </div>
+                        <div class="card-footer border-top border-bottom">
+                            <div class="row align-items-center">
+                                <div class="col-md-4 text-center py-1 mb-1 mt-1">
+                                    <div class="row nav nav-pills g-0 align-items-center p-0 bg-white rounded-5">
+                                        <div class="col">
+                                            <button class="nav-link rounded-5 p-0 px-1 w-100 kelas-tab-atas active"
+                                                id="pills-pertanyaan-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-pertanyaan" type="button" role="tab"
+                                                aria-controls="pills-pertanyaan"
+                                                aria-selected="true">Pertanyaan</button>
+                                        </div>
+                                        <div class="col">
+                                            <button class="nav-link rounded-5 p-0 px-1 w-100 kelas-tab-atas"
+                                                id="pills-pengaturan-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-pengaturan" type="button" role="tab"
+                                                aria-controls="pills-pengaturan"
+                                                aria-selected="false">Pengaturan</button>
+                                        </div>
+                                        <div class="col">
+                                            <button class="nav-link rounded-5 p-0 px-1 w-100 kelas-tab-atas"
+                                                id="pills-jawaban-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-jawaban" type="button" role="tab"
+                                                aria-controls="pills-jawaban" aria-selected="false">Jawaban</button>
+                                        </div>
                                     </div>
-                                    <div class="col-auto">
-                                        <a href="#" class="btn py-1 w-100 btn-outline-primary">
-                                            <i class="ri-file-copy-line"></i>
-                                        </a>
-                                    </div>
-                                    <div class="col-auto change-1">
-                                        <a href="#" class="btn py-1 w-100 btn-primary h-100" data-bs-toggle="modal"
-                                            data-bs-target="#tambahTanya">
-                                            Tambah Pertanyaan
-                                        </a>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="tambahTanya" tabindex="-1"
-                                        aria-labelledby="tambahTanyaLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="tambahTanyaLabel">Tambah Pertanyaan
-                                                    </h1>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <form
-                                                    action="{{url('/')}}/dashboard/action/survei/{{Crypt::encrypt($id)}}"
-                                                    method="POST">
-                                                    @csrf
-                                                    <div class="modal-body text-start">
-                                                        <div class="mb-3">
-                                                            <label for="tanya-tipe" class="form-label">Tipe
-                                                                Pertanyaan</label>
-                                                            <select class="form-select tipe-tanya" name="tanya-tipe"
-                                                                id="tanya-tipe">
-                                                                <option value="Jawaban Singkat">Jawaban Singkat</option>
-                                                                <option value="Pilihan Ganda">Pilihan Ganda</option>
-                                                                {{-- <option value="Kotak Centang">Kotak Centang</option>
+                                </div>
+                                <div class="col-md text-end mt-1 mb-1">
+                                    <div class="row g-1 justify-content-end">
+                                        <div class="col-auto change-1">
+                                            <a href="#" class="btn py-1 w-100 btn-outline-primary">
+                                                <i class="ri-vip-crown-line"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-auto">
+                                            <a href="#" class="btn py-1 w-100 btn-outline-primary">
+                                                <i class="ri-file-copy-line"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-auto change-1">
+                                            <a href="#" class="btn py-1 w-100 btn-primary h-100" data-bs-toggle="modal"
+                                                data-bs-target="#tambahTanya">
+                                                Tambah Pertanyaan
+                                            </a>
+                                        </div>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="tambahTanya" tabindex="-1"
+                                            aria-labelledby="tambahTanyaLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="tambahTanyaLabel">Tambah
+                                                            Pertanyaan
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <form
+                                                        action="{{url('/')}}/dashboard/action/survei/{{Crypt::encrypt($id)}}"
+                                                        method="POST">
+                                                        @csrf
+                                                        <div class="modal-body text-start">
+                                                            <div class="mb-3">
+                                                                <label for="tanya-tipe" class="form-label">Tipe
+                                                                    Pertanyaan</label>
+                                                                <select class="form-select tipe-tanya" name="tanya-tipe"
+                                                                    id="tanya-tipe">
+                                                                    <option value="Jawaban Singkat">Jawaban Singkat
+                                                                    </option>
+                                                                    <option value="Pilihan Ganda">Pilihan Ganda</option>
+                                                                    {{-- <option value="Kotak Centang">Kotak Centang</option>
                                                                 <option value="Unggah Gambar">Unggah Gambar</option>
                                                                 <option value="Skala">Skala</option>
                                                                 <option value="Lembar Persetujuan">Lembar Persetujuan
                                                                 </option> --}}
-                                                            </select>
-                                                        </div>
+                                                                </select>
+                                                            </div>
 
-                                                        <div class="mb-3">
-                                                            <label for="tanya" class="form-label">Pertanyaan</label>
-                                                            <textarea class="form-control" name="tanya" id="tanya"
-                                                                rows="3"></textarea>
-                                                        </div>
+                                                            <div class="mb-3">
+                                                                <label for="tanya" class="form-label">Pertanyaan</label>
+                                                                <textarea class="form-control" name="tanya" id="tanya"
+                                                                    rows="3"></textarea>
+                                                            </div>
 
-                                                        <div class="pilihan-ganda d-none">
-                                                            <div class="append-here">
-                                                                <label for="pilihan" class="form-label">Pilihan</label>
-                                                                <div class="card mb-3" id="pilihan">
-                                                                    <div class="card-body">
-                                                                        <div class="mb-3">
-                                                                            <label for="pilihan-1"
-                                                                                class="form-label">Pilihan 1</label>
-                                                                            <input type="text" class="form-control"
-                                                                                name="pilihan[]" id="pilihan-1"
-                                                                                aria-describedby="helpId"
-                                                                                placeholder="Masukkan Pilihan 1">
-                                                                        </div>
-                                                                        <div class="row mb-3">
-
-                                                                            <div class="col-12">
-                                                                                <div class="form-check">
-                                                                                    <input
-                                                                                        class="form-check-input kustom-1"
-                                                                                        type="checkbox" 
-                                                                                        id="kustom-1"
-                                                                                        id="lainnya[]"
-                                                                                        value="Lainnya">
-                                                                                    <label class="form-check-label"
-                                                                                        for="kustom">
-                                                                                        Kustom Jawaban
-                                                                                    </label>
-                                                                                </div>
+                                                            <div class="pilihan-ganda d-none">
+                                                                <div class="append-here">
+                                                                    <label for="pilihan"
+                                                                        class="form-label">Pilihan</label>
+                                                                    <div class="card mb-3" id="pilihan">
+                                                                        <div class="card-body">
+                                                                            <div class="mb-3">
+                                                                                <label for="pilihan-1"
+                                                                                    class="form-label">Pilihan 1</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    name="pilihan[]" id="pilihan-1"
+                                                                                    aria-describedby="helpId"
+                                                                                    placeholder="Masukkan Pilihan 1">
                                                                             </div>
+                                                                            <div class="row mb-3">
 
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <a href="#" id="clone-tanya">Tambah <i
-                                                                    class="ri-add-line"></i></a>
-                                                        </div>
-
-                                                        <div class="percentangan d-none">
-                                                            <div class="append-here">
-                                                                <label for="pilihan-centang"
-                                                                    class="form-label">Pilihan</label>
-                                                                <div class="card mb-3" id="pilihan-centang">
-                                                                    <div class="card-body">
-                                                                        <div class="mb-3">
-                                                                            <label for="pilihan-centang-1"
-                                                                                class="form-label">Pilihan 1</label>
-                                                                            <input type="text" class="form-control"
-                                                                                name="pilihan_centang[]"
-                                                                                id="pilihan-centang-1"
-                                                                                aria-describedby="helpId"
-                                                                                placeholder="Masukkan Pilihan 1">
-                                                                        </div>
-                                                                        <div class="row mb-3">
-
-                                                                            <div class="col-12">
-                                                                                <div class="form-check">
-                                                                                    <input
-                                                                                        class="form-check-input kustom-1"
-                                                                                        type="checkbox"
-                                                                                        id="kustom-centang-1"
-                                                                                        id="lainnya_centang[]"
-                                                                                        value="Lainnya">
-                                                                                    <label class="form-check-label"
-                                                                                        for="kustom-centang-1">
-                                                                                        Kustom Jawaban
-                                                                                    </label>
+                                                                                <div class="col-12">
+                                                                                    <div class="form-check">
+                                                                                        <input
+                                                                                            class="form-check-input kustom-1"
+                                                                                            type="checkbox"
+                                                                                            id="kustom-1" id="lainnya[]"
+                                                                                            value="Lainnya">
+                                                                                        <label class="form-check-label"
+                                                                                            for="kustom">
+                                                                                            Kustom Jawaban
+                                                                                        </label>
+                                                                                    </div>
                                                                                 </div>
-                                                                            </div>
 
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="#" id="clone-tanya">Tambah <i
+                                                                        class="ri-add-line"></i></a>
+                                                            </div>
+
+                                                            <div class="percentangan d-none">
+                                                                <div class="append-here">
+                                                                    <label for="pilihan-centang"
+                                                                        class="form-label">Pilihan</label>
+                                                                    <div class="card mb-3" id="pilihan-centang">
+                                                                        <div class="card-body">
+                                                                            <div class="mb-3">
+                                                                                <label for="pilihan-centang-1"
+                                                                                    class="form-label">Pilihan 1</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    name="pilihan_centang[]"
+                                                                                    id="pilihan-centang-1"
+                                                                                    aria-describedby="helpId"
+                                                                                    placeholder="Masukkan Pilihan 1">
+                                                                            </div>
+                                                                            <div class="row mb-3">
+
+                                                                                <div class="col-12">
+                                                                                    <div class="form-check">
+                                                                                        <input
+                                                                                            class="form-check-input kustom-1"
+                                                                                            type="checkbox"
+                                                                                            id="kustom-centang-1"
+                                                                                            id="lainnya_centang[]"
+                                                                                            value="Lainnya">
+                                                                                        <label class="form-check-label"
+                                                                                            for="kustom-centang-1">
+                                                                                            Kustom Jawaban
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="#" id="clone-tanya-centang">Tambah <i
+                                                                        class="ri-add-line"></i></a>
+                                                            </div>
+
+                                                            <div class="skala d-none">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <div class="mb-3">
+                                                                            <label for="min-val" class="form-label">Min
+                                                                                Value</label>
+                                                                            <input type="number" class="form-control"
+                                                                                name="min-val" id="min-val">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="mb-3">
+                                                                            <label for="max-val" class="form-label">Max
+                                                                                Value</label>
+                                                                            <input type="number" class="form-control"
+                                                                                name="max-val" id="max-val">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="mb-3">
+                                                                            <label for="min-lab" class="form-label">Min
+                                                                                Label</label>
+                                                                            <input type="text" class="form-control"
+                                                                                name="min-lab" id="min-lab">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="mb-3">
+                                                                            <label for="max-lab" class="form-label">Max
+                                                                                Label</label>
+                                                                            <input type="text" class="form-control"
+                                                                                name="max-lab" id="max-lab">
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <a href="#" id="clone-tanya-centang">Tambah <i
-                                                                    class="ri-add-line"></i></a>
+
+
                                                         </div>
-
-                                                        <div class="skala d-none">
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="min-val" class="form-label">Min
-                                                                            Value</label>
-                                                                        <input type="number" class="form-control"
-                                                                            name="min-val" id="min-val">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="max-val" class="form-label">Max
-                                                                            Value</label>
-                                                                        <input type="number" class="form-control"
-                                                                            name="max-val" id="max-val">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="min-lab" class="form-label">Min
-                                                                            Label</label>
-                                                                        <input type="text" class="form-control"
-                                                                            name="min-lab" id="min-lab">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="max-lab" class="form-label">Max
-                                                                            Label</label>
-                                                                        <input type="text" class="form-control"
-                                                                            name="max-lab" id="max-lab">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Save
+                                                                changes</button>
                                                         </div>
-
-
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Save
-                                                            changes</button>
-                                                    </div>
-                                                </form>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="col-auto change-2 d-none">
+                                            <a href="#" class="btn py-1 w-100 btn-outline-primary">
+                                                <i class="ri-restart-line"></i> Reset Jawaban
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="col-auto change-2 d-none">
-                                        <a href="#" class="btn py-1 w-100 btn-outline-primary">
-                                            <i class="ri-restart-line"></i> Reset Jawaban
-                                        </a>
-                                    </div>
-                                </div>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="card-body border-top">
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-pertanyaan" role="tabpanel"
-                                aria-labelledby="pills-pertanyaan-tab" tabindex="0">
-                                {{-- 
+                        <div class="card-body border-top">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-pertanyaan" role="tabpanel"
+                                    aria-labelledby="pills-pertanyaan-tab" tabindex="0">
+                                    {{-- 
                                 <div class="row">
                                     <div class="col-12 border-bottom cus-hov p-3 edit-tanya" data-type="Jawaban Singkat"
                                         data-type-class="jawaban-singkat-edit" data-bs-toggle="modal"
@@ -647,95 +651,98 @@
 
                                 </div> --}}
 
-                                {{-- Un-Comment this if there is no data --}}
-                                @if (count($type_survey) == 0)
-                                @include('indosurvei.include.null-survei')
-                                @endif
-                                <?php $l = 1 ?>
-                                @foreach ($type_survey as $type)
-                                
-                                @if ($type['type'] == "Jawaban Singkat")
-                                <?php $id_question = $type['question_id']?>
-                                @include('indosurvei.include.jawaban-singkat')
-                                @endif
+                                    {{-- Un-Comment this if there is no data --}}
+                                    @if (count($type_survey) == 0)
+                                    @include('indosurvei.include.null-survei')
+                                    @endif
+                                    <?php $l = 1 ?>
+                                    @foreach ($type_survey as $type)
 
-                                @if ($type['type'] == "Pilihan Ganda")
-                                <?php $id_question = $type['question_id']?>
-                                @include('indosurvei.include.pilihan-ganda')
-                                @endif
+                                    @if ($type['type'] == "Jawaban Singkat")
+                                    <?php $id_question = $type['question_id']?>
+                                    @include('indosurvei.include.jawaban-singkat')
+                                    @endif
+
+                                    @if ($type['type'] == "Pilihan Ganda")
+                                    <?php $id_question = $type['question_id']?>
+                                    @include('indosurvei.include.pilihan-ganda')
+                                    @endif
 
 
-                                @endforeach
-                            </div>
+                                    @endforeach
+                                </div>
 
-                            <div class="tab-pane fade" id="pills-pengaturan" role="tabpanel"
-                                aria-labelledby="pills-pengaturan-tab" tabindex="0">
+                                <div class="tab-pane fade" id="pills-pengaturan" role="tabpanel"
+                                    aria-labelledby="pills-pengaturan-tab" tabindex="0">
 
-                                <div class="row">
-                                    <div class="col-md-auto mb-4" style="border-right: 1px solid #dee2e6">
-                                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
-                                            aria-orientation="vertical">
-                                            <button class="nav-link custom text-start active" id="v-pills-survey-tab"
-                                                data-bs-toggle="pill" data-bs-target="#v-pills-survey" type="button"
-                                                role="tab" aria-controls="v-pills-survey" aria-selected="true">Atur
-                                                Survey</button>
-                                            <button class="nav-link custom text-start" id="v-pills-responden-tab"
-                                                data-bs-toggle="pill" data-bs-target="#v-pills-responden" type="button"
-                                                role="tab" aria-controls="v-pills-responden" aria-selected="false">Atur
-                                                Respondenmu</button>
-                                            {{-- <button class="nav-link custom text-start" id="v-pills-reward-tab"
+                                    <div class="row">
+                                        <div class="col-md-auto mb-4" style="border-right: 1px solid #dee2e6">
+                                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                                                aria-orientation="vertical">
+                                                <button class="nav-link custom text-start active"
+                                                    id="v-pills-survey-tab" data-bs-toggle="pill"
+                                                    data-bs-target="#v-pills-survey" type="button" role="tab"
+                                                    aria-controls="v-pills-survey" aria-selected="true">Atur
+                                                    Survey</button>
+                                                <button class="nav-link custom text-start" id="v-pills-responden-tab"
+                                                    data-bs-toggle="pill" data-bs-target="#v-pills-responden"
+                                                    type="button" role="tab" aria-controls="v-pills-responden"
+                                                    aria-selected="false">Atur
+                                                    Respondenmu</button>
+                                                {{-- <button class="nav-link custom text-start" id="v-pills-reward-tab"
                                                 data-bs-toggle="pill" data-bs-target="#v-pills-reward" type="button"
                                                 role="tab" aria-controls="v-pills-reward" aria-selected="false">Atur
                                                 Rewardmu</button> --}}
-                                            <button class="nav-link custom text-start" id="v-pills-jual-tab"
-                                                data-bs-toggle="pill" data-bs-target="#v-pills-jual" type="button"
-                                                role="tab" aria-controls="v-pills-jual" aria-selected="false">Jual
-                                                Surveymy</button>
+                                                <button class="nav-link custom text-start" id="v-pills-jual-tab"
+                                                    data-bs-toggle="pill" data-bs-target="#v-pills-jual" type="button"
+                                                    role="tab" aria-controls="v-pills-jual" aria-selected="false">Jual
+                                                    Surveymy</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="col-md-8">
+                                            <div class="tab-content" id="v-pills-tabContent">
 
-                                            <div class="tab-pane fade show active" id="v-pills-survey" role="tabpanel"
-                                                aria-labelledby="v-pills-survey-tab" tabindex="0">
-                                                <div class="row align-items-center mb-4">
-                                                    <div class="col-md-3 fw-bold">Judul Survey</div>
-                                                    <div class="col-md">
-                                                        <input type="text" class="form-control" name="judul" id="judul"
-                                                            value="{{$question['title']}}">
+                                                <div class="tab-pane fade show active" id="v-pills-survey"
+                                                    role="tabpanel" aria-labelledby="v-pills-survey-tab" tabindex="0">
+                                                    <div class="row align-items-center mb-4">
+                                                        <div class="col-md-3 fw-bold">Judul Survey</div>
+                                                        <div class="col-md">
+                                                            <input type="text" class="form-control" name="judul"
+                                                                id="judul" value="{{$question['title']}}">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="row align-items-center mb-4">
-                                                    <div class="col-md-3 fw-bold">Dekripsi</div>
-                                                    <div class="col-md">
-                                                        <textarea name="deskripsi" id="deskripsi" rows="3"
-                                                            class="form-control"> {{$question['description']}}</textarea>
+                                                    <div class="row align-items-center mb-4">
+                                                        <div class="col-md-3 fw-bold">Dekripsi</div>
+                                                        <div class="col-md">
+                                                            <textarea name="deskripsi" id="deskripsi" rows="3"
+                                                                class="form-control"> {{$question['description']}}</textarea>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="row align-items-center mb-4">
-                                                    <div class="col-md-3 fw-bold">Kategori</div>
-                                                    <div class="col-md">
-                                                        <select id="kategori" class="form-select form-control">
-                                                            <option selected value="{{$question['category']}}">
-                                                                {{$question['category']}}</option>
-                                                            <option value="Bisnis & E-Commerce">Bisnis & E-Commerce
-                                                            </option>
-                                                            <option value="Pendidikan">Pendidikan</option>
-                                                            <option value="Trend Fashion">Trend Fashion</option>
-                                                            <option value="Makanan">Makanan</option>
-                                                            <option value="Kesehatan">Kesehatan</option>
-                                                            <option value="Riset Market">Riset Market</option>
-                                                            <option value="Musik">Musik</option>
-                                                            <option value="Perjalanan & Pariwisata">Perjalanan &
-                                                                Pariwisata
-                                                            </option>
-                                                            <option value="Olahraga">Olahraga</option>
-                                                            <option value="Pekerjaan & Karir">Pekerjaan & Karir</option>
-                                                            <option value="Lainnya">Lainnya</option>
-                                                        </select>
+                                                    <div class="row align-items-center mb-4">
+                                                        <div class="col-md-3 fw-bold">Kategori</div>
+                                                        <div class="col-md">
+                                                            <select id="kategori" class="form-select form-control">
+                                                                <option selected value="{{$question['category']}}">
+                                                                    {{$question['category']}}</option>
+                                                                <option value="Bisnis & E-Commerce">Bisnis & E-Commerce
+                                                                </option>
+                                                                <option value="Pendidikan">Pendidikan</option>
+                                                                <option value="Trend Fashion">Trend Fashion</option>
+                                                                <option value="Makanan">Makanan</option>
+                                                                <option value="Kesehatan">Kesehatan</option>
+                                                                <option value="Riset Market">Riset Market</option>
+                                                                <option value="Musik">Musik</option>
+                                                                <option value="Perjalanan & Pariwisata">Perjalanan &
+                                                                    Pariwisata
+                                                                </option>
+                                                                <option value="Olahraga">Olahraga</option>
+                                                                <option value="Pekerjaan & Karir">Pekerjaan & Karir
+                                                                </option>
+                                                                <option value="Lainnya">Lainnya</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                {{-- <div class="row mb-4">
+                                                    {{-- <div class="row mb-4">
                                                     <div class="col-md-3 fw-bold">Periode Survey</div>
                                                     <div class="col-md">
                                                         <div class="row">
@@ -774,73 +781,75 @@
                                                         </div>
                                                     </div>
                                                 </div> --}}
-                                            </div>
+                                                </div>
 
-                                            <div class="tab-pane fade" id="v-pills-responden" role="tabpanel"
-                                                aria-labelledby="v-pills-responden-tab" tabindex="0">
-                                                <div class="row mb-4">
-                                                    <div class="col-md-3 fw-bold">Responden</div>
-                                                    <div class="col-md">
+                                                <div class="tab-pane fade" id="v-pills-responden" role="tabpanel"
+                                                    aria-labelledby="v-pills-responden-tab" tabindex="0">
+                                                    <div class="row mb-4">
+                                                        <div class="col-md-3 fw-bold">Responden</div>
+                                                        <div class="col-md">
 
-                                                        <div class="row">
+                                                            <div class="row">
 
-                                                            <div class="col-md-6 mb-2">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        name="pilihbatas" id="semua-orang" checked>
-                                                                    <label class="form-check-label" for="semua-orang">
-                                                                        Semua Orang
-                                                                    </label>
+                                                                <div class="col-md-6 mb-2">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="pilihbatas" id="semua-orang" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="semua-orang">
+                                                                            Semua Orang
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-md-6 mb-2">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        name="pilihbatas" id="Hanya yang Register">
-                                                                    <label class="form-check-label"
-                                                                        for="Hanya yang Register">
-                                                                        Hanya yang Register
-                                                                    </label>
+                                                                <div class="col-md-6 mb-2">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="pilihbatas" id="Hanya yang Register">
+                                                                        <label class="form-check-label"
+                                                                            for="Hanya yang Register">
+                                                                            Hanya yang Register
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
+
                                                             </div>
 
                                                         </div>
-
                                                     </div>
-                                                </div>
-                                                <div class="row mb-4">
-                                                    <div class="col-md-3 fw-bold">Batas Respon</div>
-                                                    <div class="col-md">
+                                                    <div class="row mb-4">
+                                                        <div class="col-md-3 fw-bold">Batas Respon</div>
+                                                        <div class="col-md">
 
-                                                        <div class="row">
+                                                            <div class="row">
 
-                                                            <div class="col-md-6 mb-2">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        name="pilihbatas" id="semua-orang" checked>
-                                                                    <label class="form-check-label" for="semua-orang">
-                                                                        Hanya Sekali
-                                                                    </label>
+                                                                <div class="col-md-6 mb-2">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="pilihbatas" id="semua-orang" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="semua-orang">
+                                                                            Hanya Sekali
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-md-6 mb-2">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        name="pilihbatas" id="Hanya yang Register">
-                                                                    <label class="form-check-label"
-                                                                        for="Hanya yang Register">
-                                                                        Berulang Ulang
-                                                                    </label>
+                                                                <div class="col-md-6 mb-2">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="pilihbatas" id="Hanya yang Register">
+                                                                        <label class="form-check-label"
+                                                                            for="Hanya yang Register">
+                                                                            Berulang Ulang
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
+
                                                             </div>
 
                                                         </div>
-
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            {{-- <div class="tab-pane fade" id="v-pills-reward" role="tabpanel"
+                                                {{-- <div class="tab-pane fade" id="v-pills-reward" role="tabpanel"
                                                 aria-labelledby="v-pills-reward-tab" tabindex="0">
                                                 <div class="row mb-4 align-items-center">
                                                     <div class="col-md-3 fw-bold">Responden Reward</div>
@@ -853,217 +862,220 @@
                                                 </div>
                                             </div> --}}
 
-                                            <div class="tab-pane fade" id="v-pills-jual" role="tabpanel"
-                                                aria-labelledby="v-pills-jual-tab" tabindex="0">
+                                                <div class="tab-pane fade" id="v-pills-jual" role="tabpanel"
+                                                    aria-labelledby="v-pills-jual-tab" tabindex="0">
 
-                                                <div class="row mb-4">
-                                                    <div class="col-md-3 fw-bold">Jual Survey</div>
-                                                    <div class="col-md">
-                                                        <div class="row">
-                                                            <div class="col-md-4 mb-2">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input kelas-radio-jual"
-                                                                        type="radio" name="pilihbatas" id="jual">
-                                                                    <label class="form-check-label" for="jual">
-                                                                        Jual
-                                                                    </label>
+                                                    <div class="row mb-4">
+                                                        <div class="col-md-3 fw-bold">Jual Survey</div>
+                                                        <div class="col-md">
+                                                            <div class="row">
+                                                                <div class="col-md-4 mb-2">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input kelas-radio-jual"
+                                                                            type="radio" name="pilihbatas" id="jual">
+                                                                        <label class="form-check-label" for="jual">
+                                                                            Jual
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-md-4 mb-2">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input kelas-radio-jual"
-                                                                        type="radio" name="pilihbatas" id="gratis">
-                                                                    <label class="form-check-label" for="gratis">
-                                                                        Gratis
-                                                                    </label>
+                                                                <div class="col-md-4 mb-2">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input kelas-radio-jual"
+                                                                            type="radio" name="pilihbatas" id="gratis">
+                                                                        <label class="form-check-label" for="gratis">
+                                                                            Gratis
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-md-4 mb-2">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input kelas-radio-jual"
-                                                                        type="radio" name="pilihbatas"
-                                                                        id="tidak-dijual">
-                                                                    <label class="form-check-label" for="tida-dijual">
-                                                                        Tidak Dijual
-                                                                    </label>
+                                                                <div class="col-md-4 mb-2">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input kelas-radio-jual"
+                                                                            type="radio" name="pilihbatas"
+                                                                            id="tidak-dijual">
+                                                                        <label class="form-check-label"
+                                                                            for="tida-dijual">
+                                                                            Tidak Dijual
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-md change-harga d-none">
-                                                                <label class="form-check-label" for="harga">
-                                                                    Harga
-                                                                </label>
-                                                                <div class="input-group">
-                                                                    <span class="input-group-text">Rp</span>
-                                                                    <input id="harga" type="number"
-                                                                        class="form-control">
+                                                                <div class="col-md change-harga d-none">
+                                                                    <label class="form-check-label" for="harga">
+                                                                        Harga
+                                                                    </label>
+                                                                    <div class="input-group">
+                                                                        <span class="input-group-text">Rp</span>
+                                                                        <input id="harga" type="number"
+                                                                            class="form-control">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                 </div>
-
                                             </div>
-                                        </div>
-                                        <div class="row mt-5">
-                                            <div class="col-md">
-                                                <button class="btn btn-outline-danger btn-delete-survei" data-id="{{ $question['id'] }}">Hapus</button>
-                                            </div>
-                                            <div class="col-md text-end">
-                                                <button class="btn btn-primary">Simpan</button>
+                                            <div class="row mt-5">
+                                                <div class="col-md">
+                                                    <button class="btn btn-outline-danger btn-delete-survei"
+                                                        data-id="{{ $question['id'] }}">Hapus</button>
+                                                </div>
+                                                <div class="col-md text-end">
+                                                    <button class="btn btn-primary">Simpan</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
 
-                            </div>
-
-                            <div class="tab-pane fade" id="pills-jawaban" role="tabpanel"
-                                aria-labelledby="pills-pengaturan-tab" tabindex="0">
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="individual-tab-pane" role="tabpanel"
-                                        aria-labelledby="individual-tab" tabindex="0">
-                                        <h4 class="mt-4">3 Jawaban</h4>
-                                        <div class="table-responsive mb-3">
-                                            <table class="table table-bordered table-striped">
-                                                <tr class="1st-page">
-                                                    <th style="width: 100px">Pertanyaan</th>
-                                                    <th style="width: 200px">
-                                                        <div class="row">
-                                                            <div class="col">email1@gmail.com</div>
-                                                            <div class="col text-end">x</div>
-                                                        </div>
-                                                    </th>
-                                                    <th style="width: 200px">
-                                                        <div class="row">
-                                                            <div class="col">email2@gmail.com</div>
-                                                            <div class="col text-end">x</div>
-                                                        </div>
-                                                    </th>
-                                                </tr>
-                                                <tr class="1st-page">
-                                                    <td>
-                                                        1. Jawaban Singkat
-                                                    </td>
-                                                    <td>
-                                                        Jawaban 1
-                                                    </td>
-                                                    <td>
-                                                        Jawaban 2
-                                                    </td>
-                                                </tr>
-                                                <tr class="1st-page">
-                                                    <td>
-                                                        2. Pilihan Ganda
-                                                    </td>
-                                                    <td>
-                                                        P3
-                                                    </td>
-                                                    <td>
-                                                        P1
-                                                    </td>
-                                                </tr>
-                                                <tr class="1st-page">
-                                                    <td>
-                                                        3. Kotak Centang
-                                                    </td>
-                                                    <td>
-                                                        K2, K3
-                                                    </td>
-                                                    <td>
-                                                        K2, Hehe
-                                                    </td>
-                                                </tr>
-                                                <tr class="1st-page">
-                                                    <td>
-                                                        4. Unggah Gambar
-                                                    </td>
-                                                    <td>
-                                                        https://storage.googleapis.com/smart-survey-files/answer-image-files/BXvwE2mQcagFnXaPmTzBpBjafNSxCfWZ.jpg
-                                                    </td>
-                                                    <td>
-                                                        https://storage.googleapis.com/smart-survey-files/answer-image-files/8TYj5g1PBhgmLMWaWEtfdK9ip10HBVLh.jpg
-                                                    </td>
-                                                </tr>
-                                                <tr class="1st-page">
-                                                    <td>5. Skala</td>
-                                                    <td>6</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr class="2nd-page d-none">
-                                                    <th style="width: 100px">Pertanyaan</th>
-                                                    <th style="width: 200px">
-                                                        <div class="row">
-                                                            <div class="col">email3@gmail.com</div>
-                                                            <div class="col text-end">x</div>
-                                                        </div>
-                                                    </th>
-                                                    <th style="width: 200px">
-                                                        <div class="row">
-                                                            <div class="col"></div>
-                                                            <div class="col text-end"></div>
-                                                        </div>
-                                                    </th>
-                                                </tr>
-                                                <tr class="2nd-page d-none">
-                                                    <td>
-                                                        1. Jawaban Singkat
-                                                    </td>
-                                                    <td>
-                                                        Jawaban 3
-                                                    </td>
-                                                    <td>
-                                                    </td>
-                                                </tr>
-                                                <tr class="2nd-page d-none">
-                                                    <td>
-                                                        2. Pilihan Ganda
-                                                    </td>
-                                                    <td>
-                                                        P4
-                                                    </td>
-                                                    <td>
-                                                    </td>
-                                                </tr>
-                                                <tr class="2nd-page d-none">
-                                                    <td>
-                                                        3. Kotak Centang
-                                                    </td>
-                                                    <td>
-                                                        K2, K3
-                                                    </td>
-                                                    <td>
-                                                    </td>
-                                                </tr>
-                                                <tr class="2nd-page d-none">
-                                                    <td>
-                                                        4. Unggah Gambar
-                                                    </td>
-                                                    <td>
-                                                        https://storage.googleapis.com/smart-survey-files/answer-image-files/BXvwE2mQcagFnXaPmTzBpBjafNSxCfWZ.jpg
-                                                    </td>
-                                                    <td>
-                                                    </td>
-                                                </tr>
-                                                <tr class="2nd-page d-none">
-                                                    <td>5. Skala</td>
-                                                    <td>6</td>
-                                                    <td></td>
-                                                </tr>
-                                            </table>
+                                <div class="tab-pane fade" id="pills-jawaban" role="tabpanel"
+                                    aria-labelledby="pills-pengaturan-tab" tabindex="0">
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="individual-tab-pane" role="tabpanel"
+                                            aria-labelledby="individual-tab" tabindex="0">
+                                            <h4 class="mt-4">3 Jawaban</h4>
+                                            <div class="table-responsive mb-3">
+                                                <table class="table table-bordered table-striped">
+                                                    <tr class="1st-page">
+                                                        <th style="width: 100px">Pertanyaan</th>
+                                                        <th style="width: 200px">
+                                                            <div class="row">
+                                                                <div class="col">email1@gmail.com</div>
+                                                                <div class="col text-end">x</div>
+                                                            </div>
+                                                        </th>
+                                                        <th style="width: 200px">
+                                                            <div class="row">
+                                                                <div class="col">email2@gmail.com</div>
+                                                                <div class="col text-end">x</div>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr class="1st-page">
+                                                        <td>
+                                                            1. Jawaban Singkat
+                                                        </td>
+                                                        <td>
+                                                            Jawaban 1
+                                                        </td>
+                                                        <td>
+                                                            Jawaban 2
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="1st-page">
+                                                        <td>
+                                                            2. Pilihan Ganda
+                                                        </td>
+                                                        <td>
+                                                            P3
+                                                        </td>
+                                                        <td>
+                                                            P1
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="1st-page">
+                                                        <td>
+                                                            3. Kotak Centang
+                                                        </td>
+                                                        <td>
+                                                            K2, K3
+                                                        </td>
+                                                        <td>
+                                                            K2, Hehe
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="1st-page">
+                                                        <td>
+                                                            4. Unggah Gambar
+                                                        </td>
+                                                        <td>
+                                                            https://storage.googleapis.com/smart-survey-files/answer-image-files/BXvwE2mQcagFnXaPmTzBpBjafNSxCfWZ.jpg
+                                                        </td>
+                                                        <td>
+                                                            https://storage.googleapis.com/smart-survey-files/answer-image-files/8TYj5g1PBhgmLMWaWEtfdK9ip10HBVLh.jpg
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="1st-page">
+                                                        <td>5. Skala</td>
+                                                        <td>6</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr class="2nd-page d-none">
+                                                        <th style="width: 100px">Pertanyaan</th>
+                                                        <th style="width: 200px">
+                                                            <div class="row">
+                                                                <div class="col">email3@gmail.com</div>
+                                                                <div class="col text-end">x</div>
+                                                            </div>
+                                                        </th>
+                                                        <th style="width: 200px">
+                                                            <div class="row">
+                                                                <div class="col"></div>
+                                                                <div class="col text-end"></div>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr class="2nd-page d-none">
+                                                        <td>
+                                                            1. Jawaban Singkat
+                                                        </td>
+                                                        <td>
+                                                            Jawaban 3
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="2nd-page d-none">
+                                                        <td>
+                                                            2. Pilihan Ganda
+                                                        </td>
+                                                        <td>
+                                                            P4
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="2nd-page d-none">
+                                                        <td>
+                                                            3. Kotak Centang
+                                                        </td>
+                                                        <td>
+                                                            K2, K3
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="2nd-page d-none">
+                                                        <td>
+                                                            4. Unggah Gambar
+                                                        </td>
+                                                        <td>
+                                                            https://storage.googleapis.com/smart-survey-files/answer-image-files/BXvwE2mQcagFnXaPmTzBpBjafNSxCfWZ.jpg
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="2nd-page d-none">
+                                                        <td>5. Skala</td>
+                                                        <td>6</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination custom-style">
+                                                    <li class="page-item"><a class="page-link" href="#">Previous</a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link number">1</a></li>
+                                                    <li class="page-item"><a class="page-link number">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                                </ul>
+                                            </nav>
                                         </div>
-                                        <nav aria-label="Page navigation example">
-                                            <ul class="pagination custom-style">
-                                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                                <li class="page-item"><a class="page-link number">1</a></li>
-                                                <li class="page-item"><a class="page-link number">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                            </ul>
-                                        </nav>
                                     </div>
-                                </div>
 
-                                {{-- show if there is no data --}}
-                                {{-- <div class="row align-items-center">
+                                    {{-- show if there is no data --}}
+                                    {{-- <div class="row align-items-center">
                                     <div class="col-12 text-center py-5">
                                         <div class="mb-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" style="opacity: 0.75" version="1.1"
@@ -1218,25 +1230,32 @@
                                     </div>
                                 </div> --}}
 
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade " id="editTanya" tabindex="-1" aria-labelledby="tambahTanyaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="content-editTanya">
 
             </div>
         </div>
     </div>
-</div>
 
-<div class="modal fade " id="editTanya" tabindex="-1" aria-labelledby="tambahTanyaLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div id="loading">Loading...</div>
-        <div class="modal-content" id="content-editTanya">
 
+    <div class="modal fade " id="editTanya-pilihan-ganda" tabindex="-1" aria-labelledby="tambahTanyaLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="content-editTanya-ganda">
+
+            </div>
         </div>
     </div>
-</div>
 
-
-
-@endsection
+    @endsection

@@ -152,7 +152,7 @@ use App\Models\User;
                                     @else
                                     <div class="card-header bg-thumb" style="background-image: url('{{url('/')}}/images/background/survey/{{$que['images']}}') ">
                                     @endif
-                              
+
                                     </div>
                                     <div class="card-body">
                                         <span class="badge rounded-pill bg-primary mb-1">{{$que['category']}}</span> <br><small>{{$que['created_at']}}</small>

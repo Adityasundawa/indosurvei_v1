@@ -1,27 +1,30 @@
+
+
+
 <div class="modal-header">
     <h1 class="modal-title fs-5" id="tambahTanyaLabel">Edit Pertanyaan
     </h1>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
-<form id="editForm" action="{{ route('edit.short_question', $question['id']) }}" method="POST">
-<div class="modal-body text-start">
-    {{ method_field('patch') }}
-    {{ csrf_field() }}
+<form id="editForm" action="" method="POST">
+    <div class="modal-body text-start">
+        {{ method_field('patch') }}
+        {{ csrf_field() }}
         <div class="mb-3">
             <label for="tanya-tipe" class="form-label">Tipe
                 Pertanyaan</label>
             <select class="form-select tipe-tanya-edit" name="tanya-tipe" id="tanya-tipe">
                 <option value="Jawaban Singkat">Jawaban Singkat</option>
-                <option value="Pilihan Ganda">Pilihan Ganda</option>
+                <option value="Pilihan Ganda" selected>Pilihan Ganda</option>
             </select>
         </div>
 
         <div class="mb-3">
             <label for="tanya" class="form-label">Pertanyaan</label>
-            <textarea class="form-control" name="question" id="tanya" rows="3"> {{$question['question']}}</textarea>
+            <textarea class="form-control" name="question" id="tanya" rows="3">{{$question['question']}}</textarea>
         </div>
 
-        <div class="pilihan-ganda-edit adhd d-none">
+         <div class="pilihan-ganda-edit adhd">
             <div class="append-here">
                 <label for="pilihan" class="form-label">Pilihan</label>
                 <div class="card mb-3" id="pilihan">
@@ -35,10 +38,8 @@
 
                             <div class="col-12">
                                 <div class="form-check">
-                                    <input class="form-check-input kustom-1" type="checkbox" 
-                                    id="kustom-1"
-                                    name="lainnya[]"
-                                        value="Lainnya">
+                                    <input class="form-check-input kustom-1" type="checkbox" id="kustom-1"
+                                        name="lainnya[]" value="Lainnya">
                                     <label class="form-check-label" for="kustom">
                                         Kustom Jawaban
                                     </label>
@@ -51,10 +52,10 @@
             </div>
             <a href="#" id="clone-tanya-edit">Tambah <i class="ri-add-line"></i></a>
         </div>
-</div>
+    </div>
 </form>
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button class="btn btn-danger btn-delete" data-id="{{ $question['id'] }}">Delete</button>
-    <button type="submit" form="editForm"  class="btn btn-primary btn-update" >Save changes</button>
+    <button class="btn btn-danger btn-delete" data-id="">Delete</button>
+    <button type="submit" form="editForm" class="btn btn-primary btn-update">Save changes</button>
 </div>

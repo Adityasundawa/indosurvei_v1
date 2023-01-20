@@ -52,6 +52,7 @@ class UserController extends Controller
         ]);
         if ($question) {
             Session::flash('message', 'sukses'); 
+
             return redirect('edit-survei/'.Crypt::encrypt($question->id));
         }else{
              Alert::error('Warning', 'Survei Tidak Berhasil Dibuat');
@@ -82,6 +83,7 @@ class UserController extends Controller
                 'type' => $request['tanya-tipe'],
                 'question_id' =>  $question->id,
             ]);
+            Alert::success('Selamat', 'Item  Berhasil Di Tambahkan');
             return redirect('edit-survei/'.Crypt::encrypt($id));
          }
 
@@ -118,6 +120,11 @@ class UserController extends Controller
        return view('indosurvei.ajax.edittanya',$data);
     }
 
+    public function get_edit_pilhan_ganda(Request $request)
+    {
+        $data['question'] = Multiplechoice::find($request['id']);
+        return view('indosurvei.ajax.edit_pilhan_ganda',$data);
+    }
     public function delete_short_question($id)
     {
         $item = ShortQuestion::findOrFail($id);

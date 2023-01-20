@@ -336,7 +336,7 @@
             }
         })
 
-        $("select.tipe-tanya-edit").on('click', function() {
+        $(document).on('click','select.tipe-tanya-edit', function() {
             if ($(this).val() == "Jawaban Singkat") {
                 $("div.pilihan-ganda-edit").addClass('d-none')
                 $("div.percentangan-edit").addClass('d-none')
@@ -484,75 +484,75 @@
          
         });
 
-        $('#clone-tanya-centang').on('click', function() {
-              let cloneCount = $($('.percentangan div.append-here').find('div.card')).length + 1
-                $('.percentangan div.append-here').append(`
-                   <div class="card mb-3">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <label for="pilihan-centang-${cloneCount}" class="form-label hanya label-terdekat">Pilihan ${cloneCount}</label>
-                                <input type="text"
-                                class="form-control input-terdekat" name="pilihan_centang[]" id="pilihan-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
-                            </div>
-                            <div class="row mb-3">
+        // $('#clone-tanya-centang').on('click', function() {
+        //       let cloneCount = $($('.percentangan div.append-here').find('div.card')).length + 1
+        //         $('.percentangan div.append-here').append(`
+        //            <div class="card mb-3">
+        //                 <div class="card-body">
+        //                     <div class="mb-3">
+        //                         <label for="pilihan-centang-${cloneCount}" class="form-label hanya label-terdekat">Pilihan ${cloneCount}</label>
+        //                         <input type="text"
+        //                         class="form-control input-terdekat" name="pilihan_centang[]" id="pilihan-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
+        //                     </div>
+        //                     <div class="row mb-3">
                                 
-                                <div class="col-6">
-                                    <div class="form-check">
-                                        <input
-                                            class="form-check-input kustom-1 input-terdekat-check"
-                                            type="checkbox" 
-                                            id="kustom-centang-${cloneCount}"
-                                            name="lainnya_centang[]"
-                                            value="Lainnya">
-                                        <label class="form-check-label label-terdekat"
-                                            for="kustom-centang-${cloneCount}">
-                                            Kustom Jawaban
-                                        </label>
-                                    </div>
-                                </div>
+        //                         <div class="col-6">
+        //                             <div class="form-check">
+        //                                 <input
+        //                                     class="form-check-input kustom-1 input-terdekat-check"
+        //                                     type="checkbox" 
+        //                                     id="kustom-centang-${cloneCount}"
+        //                                     name="lainnya_centang[]"
+        //                                     value="Lainnya">
+        //                                 <label class="form-check-label label-terdekat"
+        //                                     for="kustom-centang-${cloneCount}">
+        //                                     Kustom Jawaban
+        //                                 </label>
+        //                             </div>
+        //                         </div>
 
-                            </div>
-                             <button type="button" class="btn btn-danger delete-centang-card">delete</button>
-                        </div>
-                    </div>`
-                )
-        });
+        //                     </div>
+        //                      <button type="button" class="btn btn-danger delete-centang-card">delete</button>
+        //                 </div>
+        //             </div>`
+        //         )
+        // });
 
-        $(document).on('click','button.delete-centang-card',function(){
+        // $(document).on('click','button.delete-centang-card',function(){
 
-            let card = $(this).closest('div.card');
-            card.remove();
-            let parentContainer = $('.percentangan div.append-here');
+        //     let card = $(this).closest('div.card');
+        //     card.remove();
+        //     let parentContainer = $('.percentangan div.append-here');
 
-            parentContainer.find('div.card').each((i,el)=>{
-                i++;
-                $(el)
-                .find('label.label-terdekat.hanya')
-                .html(`Pilihan ${i}`)
-                .end()
-                .find('label.label-terdekat')
-                .attr('for', `pilihan-centang-${i}`)
-                .end()
-                .find('input.input-terdekat')
-                .attr('id', `pilihan-centang-${i}`)
-                .attr('placeholder', `Masukkan Pilihan ${i}`)
-                .end()
-                .find('label.label-terdekat-skip')
-                .attr('for', `skip-centang-${i}`)
-                .end()
-                .find('input.input-terdekat-skip')
-                .attr('id', `skip-centang-${i}`)
-                .end()
-                .find('label.label-terdekat-check')
-                .attr('for', `kustom-centang-${i}`)
-                .end()
-                .find('input.input-terdekat-check')
-                .attr('id', `kustom-centang-${i}`);
-            });
+        //     parentContainer.find('div.card').each((i,el)=>{
+        //         i++;
+        //         $(el)
+        //         .find('label.label-terdekat.hanya')
+        //         .html(`Pilihan ${i}`)
+        //         .end()
+        //         .find('label.label-terdekat')
+        //         .attr('for', `pilihan-centang-${i}`)
+        //         .end()
+        //         .find('input.input-terdekat')
+        //         .attr('id', `pilihan-centang-${i}`)
+        //         .attr('placeholder', `Masukkan Pilihan ${i}`)
+        //         .end()
+        //         .find('label.label-terdekat-skip')
+        //         .attr('for', `skip-centang-${i}`)
+        //         .end()
+        //         .find('input.input-terdekat-skip')
+        //         .attr('id', `skip-centang-${i}`)
+        //         .end()
+        //         .find('label.label-terdekat-check')
+        //         .attr('for', `kustom-centang-${i}`)
+        //         .end()
+        //         .find('input.input-terdekat-check')
+        //         .attr('id', `kustom-centang-${i}`);
+        //     });
          
-        });
+        // });
 
-        $('#clone-tanya-edit').on('click', function() {
+        $(document).on('click', '#clone-tanya-edit',function() {
               let cloneCount = $($('.pilihan-ganda-edit div.append-here').find('div.card')).length + 1
                 $('.pilihan-ganda-edit div.append-here').append(`
                    <div class="card mb-3">
@@ -615,71 +615,71 @@
          
         });
 
-        $('#clone-tanya-centang-edit').on('click', function() {
-              let cloneCount = $($('.percentangan-edit div.append-here').find('div.card')).length + 1
-                $('.percentangan-edit div.append-here').append(`
-                   <div class="card mb-3">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <label for="pilihan-centang-${cloneCount}" class="form-label hanya label-terdekat">Pilihan ${cloneCount}</label>
-                                <input type="text"
-                                class="form-control input-terdekat" name="pilihan_centang[]" id="pilihan-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
-                            </div>
-                            <div class="row mb-3">
+        // $('#clone-tanya-centang-edit').on('click', function() {
+        //       let cloneCount = $($('.percentangan-edit div.append-here').find('div.card')).length + 1
+        //         $('.percentangan-edit div.append-here').append(`
+        //            <div class="card mb-3">
+        //                 <div class="card-body">
+        //                     <div class="mb-3">
+        //                         <label for="pilihan-centang-${cloneCount}" class="form-label hanya label-terdekat">Pilihan ${cloneCount}</label>
+        //                         <input type="text"
+        //                         class="form-control input-terdekat" name="pilihan_centang[]" id="pilihan-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
+        //                     </div>
+        //                     <div class="row mb-3">
                                 
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input
-                                            class="form-check-input kustom-1 input-terdekat-check"
-                                            type="checkbox" id="kustom-centang-${cloneCount}" name="lainnya_centang[]"
-                                            value="Lainnya">
-                                        <label class="form-check-label label-terdekat"
-                                            for="kustom-centang-${cloneCount}">
-                                            Kustom Jawaban
-                                        </label>
-                                    </div>
-                                </div>
+        //                         <div class="col-12">
+        //                             <div class="form-check">
+        //                                 <input
+        //                                     class="form-check-input kustom-1 input-terdekat-check"
+        //                                     type="checkbox" id="kustom-centang-${cloneCount}" name="lainnya_centang[]"
+        //                                     value="Lainnya">
+        //                                 <label class="form-check-label label-terdekat"
+        //                                     for="kustom-centang-${cloneCount}">
+        //                                     Kustom Jawaban
+        //                                 </label>
+        //                             </div>
+        //                         </div>
 
-                            </div>
-                             <button type="button" class="btn btn-danger delete-centang-card-edit">delete</button>
-                        </div>
-                    </div>`
-                )
-        });
+        //                     </div>
+        //                      <button type="button" class="btn btn-danger delete-centang-card-edit">delete</button>
+        //                 </div>
+        //             </div>`
+        //         )
+        // });
 
-        $(document).on('click','button.delete-centang-card-edit',function(){
+        // $(document).on('click','button.delete-centang-card-edit',function(){
 
-            let card = $(this).closest('div.card');
-            card.remove();
-            let parentContainer = $('.percentangan-edit div.append-here');
+        //     let card = $(this).closest('div.card');
+        //     card.remove();
+        //     let parentContainer = $('.percentangan-edit div.append-here');
 
-            parentContainer.find('div.card').each((i,el)=>{
-                i++;
-                $(el)
-                .find('label.label-terdekat.hanya')
-                .html(`Pilihan ${i}`)
-                .end()
-                .find('label.label-terdekat')
-                .attr('for', `pilihan-centang-${i}`)
-                .end()
-                .find('input.input-terdekat')
-                .attr('id', `pilihan-centang-${i}`)
-                .attr('placeholder', `Masukkan Pilihan ${i}`)
-                .end()
-                .find('label.label-terdekat-skip')
-                .attr('for', `skip-centang-${i}`)
-                .end()
-                .find('input.input-terdekat-skip')
-                .attr('id', `skip-centang-${i}`)
-                .end()
-                .find('label.label-terdekat-check')
-                .attr('for', `kustom-centang-${i}`)
-                .end()
-                .find('input.input-terdekat-check')
-                .attr('id', `kustom-centang-${i}`);
-            });
+        //     parentContainer.find('div.card').each((i,el)=>{
+        //         i++;
+        //         $(el)
+        //         .find('label.label-terdekat.hanya')
+        //         .html(`Pilihan ${i}`)
+        //         .end()
+        //         .find('label.label-terdekat')
+        //         .attr('for', `pilihan-centang-${i}`)
+        //         .end()
+        //         .find('input.input-terdekat')
+        //         .attr('id', `pilihan-centang-${i}`)
+        //         .attr('placeholder', `Masukkan Pilihan ${i}`)
+        //         .end()
+        //         .find('label.label-terdekat-skip')
+        //         .attr('for', `skip-centang-${i}`)
+        //         .end()
+        //         .find('input.input-terdekat-skip')
+        //         .attr('id', `skip-centang-${i}`)
+        //         .end()
+        //         .find('label.label-terdekat-check')
+        //         .attr('for', `kustom-centang-${i}`)
+        //         .end()
+        //         .find('input.input-terdekat-check')
+        //         .attr('id', `kustom-centang-${i}`);
+        //     });
          
-        });
+        // });
 
         $('div.edit-tanya').click(function(){
             const dataType = $(this).data('type');
@@ -722,6 +722,25 @@
 </script>
 
 <script>
+    $('div.edit-tanya-pilihan-ganda').on('click', function () {
+        let id = $(this).data('id');
+        $.ajax({
+            url: '{{url("/")}}/ajax/get_edit_pilhan_ganda',
+            type: "GET",
+            data: {
+                id
+            },
+            success: function (response) {
+                if (response) {
+                    $('#content-editTanya-ganda').html(response);
+                }
+            }
+        });
+    });
+</script>
+
+
+<script>
     $(document).on('click','button.btn-delete', function (e) {
     e.preventDefault();
     let id = $(this).data('id');
@@ -729,7 +748,7 @@
     Swal.fire({
         title: 'Apakah Anda Yakin?',
         text: "Ingin menghapus item ini",
-        icon: 'warning',
+        // icon: 'warning',  
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
