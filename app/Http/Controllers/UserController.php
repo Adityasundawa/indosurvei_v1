@@ -26,6 +26,16 @@ class UserController extends Controller
         return view('indosurvei.dashboard',$data);
      
     }
+
+    public function list_survey()
+    {
+       
+
+        // $data['question'] = Question::where('users_id',Auth::user()->id)->get();
+        $data['question'] = Survey::where('users_id',Auth::user()->id)->get();
+        return view('indosurvei.list-survey',$data);
+     
+    }
     public function action_survey(Request $request)
     {
         // $request->validate([
