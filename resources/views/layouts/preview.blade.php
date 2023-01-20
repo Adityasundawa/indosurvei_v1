@@ -206,6 +206,7 @@
     <script src="{{url('/')}}/assets/js/ajaxchimp.min.js"></script>
     <script src="{{url('/')}}/assets/js/custom.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="{{url('/')}}/assets/js/sweetalert2.all.min.js"></script>
 
     <script>
 
@@ -350,6 +351,13 @@
             document.getElementById('uploadFile').parentNode.className = 'dragBox';
         }
 
+        $('.submit').on('click', function() {
+            Swal.fire(
+  'Berhasil!',
+  'Data Anda berhasil dikirim',
+  'success'
+)
+        })
     </script>
 
 </body>
