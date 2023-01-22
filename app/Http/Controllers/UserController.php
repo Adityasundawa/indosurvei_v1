@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreMultiplechoiceRequest;
+use App\Http\Requests\StoreMultiplechoicesAnswerRequest;
 use App\Models\Multiplechoice;
 use App\Models\MultiplechoicesAnswer;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -123,11 +125,21 @@ class UserController extends Controller
     public function get_edit_pilhan_ganda(Request $request)
     {
         $data['question'] = Multiplechoice::find($request['id']);
+        $data['answer'] = MultiplechoicesAnswer::where('multiplechoices_id',$request['id'])->get();
         return view('indosurvei.ajax.edit_pilhan_ganda',$data);
     }
     public function delete_short_question($id)
     {
         $item = ShortQuestion::findOrFail($id);
+        $item->delete();
+        $item2 = Typesurvey::where('question_id',$id);
+        $item2->delete();
+        return response()->json(['success' => 'Item deleted']);
+    }
+
+    public function delete_multiple_question($id)
+    {
+        $item = Multiplechoice::findOrFail($id);
         $item->delete();
         $item2 = Typesurvey::where('question_id',$id);
         $item2->delete();
@@ -151,5 +163,23 @@ class UserController extends Controller
        return redirect()->back();
     }
 
+    public function update_multiple_question(Request $request, $id)
+    {
+        $item = Multiplechoice::findOrFail($id);
+        $item->update([
+            'question' => $request['question'],
+        ]);
+        foreach ($request['pilihan'] as $key => $value) {
+            MultiplechoicesAnswer::updateOrInsert(['id' => $key], [
+                'answer' => $value,
+                'multiplechoices_id' => $id,
+                'images' => 'default.png',
+                'survey_id' => $item->survey_id,
+            ]);
+        }
+        MultiplechoicesAnswer::whereNotIn('id', array_keys($request['pilihan']))->delete();
+        Alert::success('Selamat', 'Item  Berhasil Di Update');
+        return redirect()->back();
+    }
 
-}
+}   

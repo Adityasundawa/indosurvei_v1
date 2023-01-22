@@ -4,12 +4,11 @@
 <div class="modal-header">
     <h1 class="modal-title fs-5" id="tambahTanyaLabel">Edit Pertanyaan
     </h1>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <button type="button" class="btn-close  btn-close-alert "></button>
 </div>
-<form id="editForm" action="" method="POST">
+<form id="editForm" action="{{ route('edit.multiple_question', $question['id']) }}" method="POST">
     <div class="modal-body text-start">
-        {{ method_field('patch') }}
-        {{ csrf_field() }}
+      @csrf
         <div class="mb-3">
             <label for="tanya-tipe" class="form-label">Tipe
                 Pertanyaan</label>
@@ -27,35 +26,44 @@
          <div class="pilihan-ganda-edit adhd">
             <div class="append-here">
                 <label for="pilihan" class="form-label">Pilihan</label>
-                <div class="card mb-3" id="pilihan">
+
+                <?php $i = 1 ?>
+
+                @foreach ($answer as $an)
+                <?php $ide =  $i++ ?>
+                <div class="card mb-3">
                     <div class="card-body">
                         <div class="mb-3">
-                            <label for="pilihan-1" class="form-label">Pilihan 1</label>
-                            <input type="text" class="form-control" name="pilihan[]" id="pilihan-1"
-                                aria-describedby="helpId" placeholder="Masukkan Pilihan 1">
+                            <label for="pilihan-{{$an['id']}}" class="form-label hanya label-terdekat">Pilihan {{$ide}}</label>
+                            <input type="text"
+                            class="form-control input-terdekat" value="{{$an['answer']}}" name="pilihan[{{$an['id']}}]" id="pilihan-{{$an['id']}}" aria-describedby="helpId" placeholder="Masukkan Pilihan {{$an['id']}}">
                         </div>
                         <div class="row mb-3">
-
                             <div class="col-12">
                                 <div class="form-check">
-                                    <input class="form-check-input kustom-1" type="checkbox" id="kustom-1"
-                                        name="lainnya[]" value="Lainnya">
-                                    <label class="form-check-label" for="kustom">
+                                    <input class="form-check-input kustom-1 input-terdekat-check" 
+                                        type="checkbox"
+                                      id="kustom-{{$an['id']}}" name="lainnya[]" value="Lainnya">
+                                    <label class="form-check-label label-terdekatphp"
+                                        for="kustom-{{$an['id']}}">
                                         Kustom Jawaban
                                     </label>
                                 </div>
                             </div>
-
                         </div>
+                         <button type="button" class="btn btn-danger delete-card-edit">delete</button>
                     </div>
                 </div>
+                @endforeach
+               
+            
             </div>
             <a href="#" id="clone-tanya-edit">Tambah <i class="ri-add-line"></i></a>
         </div>
     </div>
 </form>
 <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button class="btn btn-danger btn-delete" data-id="">Delete</button>
+    <button type="button" class="btn btn-secondary btn-close-alert">Close</button>
+    <button class="btn btn-danger btn-delete-multiple-question" data-id="{{ $question['id'] }}">Delete</button>
     <button type="submit" form="editForm" class="btn btn-primary btn-update">Save changes</button>
 </div>

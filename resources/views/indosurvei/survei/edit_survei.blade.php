@@ -1240,7 +1240,7 @@
         </div>
     </div>
 
-    <div class="modal fade " id="editTanya" tabindex="-1" aria-labelledby="tambahTanyaLabel" aria-hidden="true">
+    <div class="modal fade " id="editTanya" tabindex="-1" aria-labelledby="tambahTanyaLabel"  data-bs-backdrop="static" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" id="content-editTanya">
 
@@ -1250,7 +1250,7 @@
 
 
     <div class="modal fade " id="editTanya-pilihan-ganda" tabindex="-1" aria-labelledby="tambahTanyaLabel"
-        aria-hidden="true">
+        data-bs-backdrop="static" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" id="content-editTanya-ganda">
 
