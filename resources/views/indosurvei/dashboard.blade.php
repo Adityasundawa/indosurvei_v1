@@ -133,7 +133,7 @@ use App\Models\User;
 
                     <div class="row mb-3">
                         <div class="col-md">
-                            <h2 class="mb-0" style="display: inline">Survey Terbaru</h2><a href="#"
+                            <h2 class="mb-0" style="display: inline">Survey Terbaru</h2><a href="{{url('')}}/list-survey"
                                 class="ms-5"><small>Lihat Semua</small></a>
                         </div>
                     </div>

@@ -33,7 +33,7 @@
         .bg-thumb {
             height: 125px;
             background-image: url("https://media.istockphoto.com/id/1357365823/vector/default-image-icon-vector-missing-picture-page-for-website-design-or-mobile-app-no-photo.jpg?s=612x612&w=0&k=20&c=PM_optEhHBTZkuJQLlCjLz-v3zzxp-1mpNQZsdjrbns=");
-            background-size: contain;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat
         }
@@ -41,7 +41,7 @@
         .bg-thumb-big {
             height: 195px;
             background-image: url("https://media.istockphoto.com/id/1357365823/vector/default-image-icon-vector-missing-picture-page-for-website-design-or-mobile-app-no-photo.jpg?s=612x612&w=0&k=20&c=PM_optEhHBTZkuJQLlCjLz-v3zzxp-1mpNQZsdjrbns=");
-            background-size: contain;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat
         }
@@ -206,6 +206,7 @@
     <script src="{{url('/')}}/assets/js/ajaxchimp.min.js"></script>
     <script src="{{url('/')}}/assets/js/custom.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="{{url('/')}}/assets/js/sweetalert2.all.min.js"></script>
 
     <script>
 
@@ -350,6 +351,13 @@
             document.getElementById('uploadFile').parentNode.className = 'dragBox';
         }
 
+        $('.submit').on('click', function() {
+            Swal.fire(
+  'Berhasil!',
+  'Data Anda berhasil dikirim',
+  'success'
+)
+        })
     </script>
 
 </body>

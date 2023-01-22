@@ -36,7 +36,7 @@ Route::controller(IndoSurvei::class)->group(function () {
 Route::get('/dashboard2', function () {
     return view('indosurvei/dashboard');
 });
-Route::get('/list-survey', function () {
+Route::get('/list-survey2', function () {
     return view('indosurvei/list-survey');
 });
 Route::get('/detail', function () {
@@ -63,6 +63,7 @@ Route::middleware([
 
 Route::group(['middleware' => 'auth.check'], function () {
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('list-survey', [UserController::class, 'list_survey'])->name('list-survey');
     Route::get('edit-survei/{id}', [UserController::class, 'edit_survei'])->name('edit.survei');
     Route::post('dashboard/action/survei/{id}', [UserController::class, 'dashboard_action_survei'])->name('dashboard.action.survei');
 

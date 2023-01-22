@@ -20,15 +20,15 @@
 
                             <div class="row">
                                 <div class="col-6">
-                                    <h2>
+                                    <h2 style="mix-blend-mode: difference; color: white">
                                         {{$question['title']}}
                                     </h2>
                                 </div>
                                 <div class="col-6 text-end">
-                                    <a href="#">Ubah Background <i class="ri-edit-2-fill"></i></a>
+                                    <a href="#" style="mix-blend-mode: difference; color: white">Ubah Background <i class="ri-edit-2-fill"></i></a>
                                 </div>
                                 <div class="col-md-12 mb-5">
-                                    <h6> {{$question['description']}}</h6>
+                                    <h6 style="mix-blend-mode: difference; color: white"> {{$question['description']}}</h6>
                                 </div>
                                 <div class="col-md-12 text-end">
                                     <button class="btn btn-outline-primary">Download</button>
