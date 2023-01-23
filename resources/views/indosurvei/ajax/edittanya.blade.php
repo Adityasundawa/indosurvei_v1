@@ -1,7 +1,7 @@
 <div class="modal-header">
     <h1 class="modal-title fs-5" id="tambahTanyaLabel">Edit Pertanyaan
     </h1>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <button type="button" class="btn-close btn-close-alert"></button>
 </div>
 <form id="editForm" action="{{ route('edit.short_question', $question['id']) }}" method="POST">
 <div class="modal-body text-start">
@@ -48,13 +48,14 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
             <a href="#" id="clone-tanya-edit">Tambah <i class="ri-add-line"></i></a>
         </div>
 </div>
 </form>
 <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-secondary btn-close-alert">Close</button>
     <button class="btn btn-danger btn-delete" data-id="{{ $question['id'] }}">Delete</button>
     <button type="submit" form="editForm"  class="btn btn-primary btn-update" >Save changes</button>
 </div>

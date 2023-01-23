@@ -76,10 +76,10 @@ Route::group(['middleware' => 'auth.check'], function () {
     Route::get('/ajax/get_edit_pilhan_ganda', [UserController::class, 'get_edit_pilhan_ganda'])->name('edit.get_edit_pilhan_ganda');
     
 
-
+    Route::delete('/delete/multiple_question/{id}',[UserController::class, 'delete_multiple_question'])->name('delete.delete_multiple_question');
     Route::delete('/delete/short_question/{id}',[UserController::class, 'delete_short_question'])->name('delete.delete_short_question');
     Route::delete('/delete/survei/{id}',[UserController::class, 'delete_survei_all'])->name('delete.delete_survei_all');
     Route::patch('/edit/short_question/{id}', [UserController::class, 'update_short_question'])->name('edit.short_question');
-
+    Route::post('/edit/multiple_question/{id}', [UserController::class, 'update_multiple_question'])->name('edit.multiple_question');
 
 });

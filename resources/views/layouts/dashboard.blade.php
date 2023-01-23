@@ -61,6 +61,7 @@
             border: 1px solid #bbbbbb !important;
             cursor: pointer;
         }
+
     </style>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{url('/')}}/assets/images/favicon.svg">
@@ -191,7 +192,7 @@
                                                         <i class="ri-login-circle-line"></i>
                                                         <span>Logout</span>
                                                     </button></form>
-                                                
+
                                             </li>
                                         </ul>
                                     </div>
@@ -304,10 +305,10 @@
     <script src="{{url('/')}}/assets/js/ajaxchimp.min.js"></script>
     <script src="{{url('/')}}/assets/js/custom.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-      @include('sweetalert::alert')
-     <script src="{{url('/')}}/assets/js/sweetalert2.all.min.js"></script>
+    @include('sweetalert::alert')
+    <script src="{{url('/')}}/assets/js/sweetalert2.all.min.js"></script>
     <script>
-        $(".kelas-tab-atas").on('click', function() {
+        $(".kelas-tab-atas").on('click', function () {
             if ($(this).text().toLowerCase() == 'pertanyaan') {
                 $('.change-1').removeClass('d-none')
                 $('.change-2').addClass('d-none')
@@ -320,7 +321,7 @@
             }
         })
 
-        $(".kelas-radio-waktu").on('click', function() {
+        $(".kelas-radio-waktu").on('click', function () {
             if ($('#atur-periode').is(':checked')) {
                 $('.change-waktu-1').removeClass('d-none')
             } else if ($('#tanpa-batas').is(':checked')) {
@@ -328,7 +329,7 @@
             }
         })
 
-        $(".kelas-radio-jual").on('click', function() {
+        $(".kelas-radio-jual").on('click', function () {
             if ($('#jual').is(':checked')) {
                 $('.change-harga').removeClass('d-none')
             } else {
@@ -336,23 +337,20 @@
             }
         })
 
-        $(document).on('click','select.tipe-tanya-edit', function() {
+        $(document).on('click', 'select.tipe-tanya-edit', function () {
             if ($(this).val() == "Jawaban Singkat") {
                 $("div.pilihan-ganda-edit").addClass('d-none')
                 $("div.percentangan-edit").addClass('d-none')
                 $("div.skala-edit").addClass('d-none')
-            }
-            else if ($(this).val() == "Pilihan Ganda") {
+            } else if ($(this).val() == "Pilihan Ganda") {
                 $("div.percentangan-edit").addClass('d-none')
                 $("div.pilihan-ganda-edit").removeClass('d-none')
                 $("div.skala-edit").addClass('d-none')
-            }
-            else if ($(this).val() == "Kotak Centang") {
+            } else if ($(this).val() == "Kotak Centang") {
                 $("div.percentangan-edit").removeClass('d-none')
                 $("div.pilihan-ganda-edit").addClass('d-none')
                 $("div.skala-edit").addClass('d-none')
-            }
-            else if ($(this).val() == "Skala") {
+            } else if ($(this).val() == "Skala") {
                 $("div.percentangan-edit").addClass('d-none')
                 $("div.pilihan-ganda-edit").addClass('d-none')
                 $("div.skala-edit").removeClass('d-none')
@@ -363,23 +361,20 @@
             }
         })
 
-        $("select.tipe-tanya").on('click', function() {
+        $("select.tipe-tanya").on('click', function () {
             if ($(this).val() == "Jawaban Singkat") {
                 $("div.pilihan-ganda").addClass('d-none')
                 $("div.percentangan").addClass('d-none')
                 $("div.skala").addClass('d-none')
-            }
-            else if ($(this).val() == "Pilihan Ganda") {
+            } else if ($(this).val() == "Pilihan Ganda") {
                 $("div.percentangan").addClass('d-none')
                 $("div.pilihan-ganda").removeClass('d-none')
                 $("div.skala").addClass('d-none')
-            }
-            else if ($(this).val() == "Kotak Centang") {
+            } else if ($(this).val() == "Kotak Centang") {
                 $("div.percentangan").removeClass('d-none')
                 $("div.pilihan-ganda").addClass('d-none')
                 $("div.skala").addClass('d-none')
-            }
-            else if ($(this).val() == "Skala") {
+            } else if ($(this).val() == "Skala") {
                 $("div.percentangan").addClass('d-none')
                 $("div.pilihan-ganda").addClass('d-none')
                 $("div.skala").removeClass('d-none')
@@ -398,22 +393,22 @@
         // })
 
 
-        const checkboxLainnya = function(){
-            const inputText = $($( $(this).closest('div.card')).find('input[type=text]'));
+        const checkboxLainnya = function () {
+            const inputText = $($($(this).closest('div.card')).find('input[type=text]'));
             if (this.checked) {
                 inputText.val(this.value)
-            }else{
+            } else {
                 inputText.val("")
             }
         }
 
 
-        $(document).on('click','input.kustom-1',checkboxLainnya);
+        $(document).on('click', 'input.kustom-1', checkboxLainnya);
 
-     
-        $('#clone-tanya').on('click', function() {
-              let cloneCount = $($('.pilihan-ganda div.append-here').find('div.card')).length + 1
-                $('.pilihan-ganda div.append-here').append(`
+
+        $('#clone-tanya').on('click', function () {
+            let cloneCount = $($('.pilihan-ganda div.append-here').find('div.card')).length + 1
+            $('.pilihan-ganda div.append-here').append(`
                    <div class="card mb-3">
                         <div class="card-body">
                             <div class="mb-3">
@@ -436,52 +431,51 @@
                             </div>
                              <button type="button" class="btn btn-danger delete-card">delete</button>
                         </div>
-                    </div>`
-                )
+                    </div>`)
         });
 
-        $(document).on('click','button.delete-card',function(){
+        $(document).on('click', 'button.delete-card', function () {
 
             let card = $(this).closest('div.card');
             card.remove();
             let parentContainer = $('.pilihan-ganda div.append-here');
 
-            parentContainer.find('div.card').each((i,el)=>{
+            parentContainer.find('div.card').each((i, el) => {
                 i++;
                 $(el)
-                .find('label.label-terdekat.hanya')
-                .html(`Pilihan ${i}`)
-                .end()
-                .find('label.label-terdekat')
-                .attr('for', `pilihan-${i}`)
-                .end()
-                .find('input.input-terdekat')
-                .attr('name', `pilihan-${i}`)
-                .attr('id', `pilihan-${i}`)
-                .attr('placeholder', `Masukkan Pilihan ${i}`)
-                .end()
-                .find('label.label-terdekat-skip')
-                .attr('for', `skip-${i}`)
-                .end()
-                .find('input.input-terdekat-skip')
-                .attr('name', `skip-${i}`)
-                .attr('id', `skip-${i}`)
-                .end()
-                .find('label.label-terdekat-gambar')
-                .attr('for', `gambar-${i}`)
-                .end()
-                .find('input.input-terdekat-gambar')
-                .attr('name', `gambar-${i}`)
-                .attr('id', `gambar-${i}`)
-                .end()
-                .find('label.label-terdekat-check')
-                .attr('for', `kustom-${i}`)
-                .end()
-                .find('input.input-terdekat-check')
-                .attr('name', `kustom-${i}`)
-                .attr('id', `kustom-${i}`);
+                    .find('label.label-terdekat.hanya')
+                    .html(`Pilihan ${i}`)
+                    .end()
+                    .find('label.label-terdekat')
+                    .attr('for', `pilihan-${i}`)
+                    .end()
+                    .find('input.input-terdekat')
+                    .attr('name', `pilihan-${i}`)
+                    .attr('id', `pilihan-${i}`)
+                    .attr('placeholder', `Masukkan Pilihan ${i}`)
+                    .end()
+                    .find('label.label-terdekat-skip')
+                    .attr('for', `skip-${i}`)
+                    .end()
+                    .find('input.input-terdekat-skip')
+                    .attr('name', `skip-${i}`)
+                    .attr('id', `skip-${i}`)
+                    .end()
+                    .find('label.label-terdekat-gambar')
+                    .attr('for', `gambar-${i}`)
+                    .end()
+                    .find('input.input-terdekat-gambar')
+                    .attr('name', `gambar-${i}`)
+                    .attr('id', `gambar-${i}`)
+                    .end()
+                    .find('label.label-terdekat-check')
+                    .attr('for', `kustom-${i}`)
+                    .end()
+                    .find('input.input-terdekat-check')
+                    .attr('name', `kustom-${i}`)
+                    .attr('id', `kustom-${i}`);
             });
-         
+
         });
 
         // $('#clone-tanya-centang').on('click', function() {
@@ -495,7 +489,7 @@
         //                         class="form-control input-terdekat" name="pilihan_centang[]" id="pilihan-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
         //                     </div>
         //                     <div class="row mb-3">
-                                
+
         //                         <div class="col-6">
         //                             <div class="form-check">
         //                                 <input
@@ -549,12 +543,12 @@
         //         .find('input.input-terdekat-check')
         //         .attr('id', `kustom-centang-${i}`);
         //     });
-         
+
         // });
 
-        $(document).on('click', '#clone-tanya-edit',function() {
-              let cloneCount = $($('.pilihan-ganda-edit div.append-here').find('div.card')).length + 1
-                $('.pilihan-ganda-edit div.append-here').append(`
+        $(document).on('click', '#clone-tanya-edit', function () {
+            let cloneCount = $($('.pilihan-ganda-edit div.append-here').find('div.card')).length + 1
+            $('.pilihan-ganda-edit div.append-here').append(`
                    <div class="card mb-3">
                         <div class="card-body">
                             <div class="mb-3">
@@ -577,260 +571,268 @@
                             </div>
                              <button type="button" class="btn btn-danger delete-card-edit">delete</button>
                         </div>
-                    </div>`
-                )
+                    </div>`)
         });
 
-        $(document).on('click','button.delete-card-edit',function(){
+        $(document).on('click', 'button.delete-card-edit', function () {
 
             let card = $(this).closest('div.card');
             card.remove();
             let parentContainer = $('.pilihan-ganda-edit div.append-here');
 
-            parentContainer.find('div.card').each((i,el)=>{
+            parentContainer.find('div.card').each((i, el) => {
                 i++;
                 $(el)
-                .find('label.label-terdekat.hanya')
-                .html(`Pilihan ${i}`)
-                .end()
-                .find('label.label-terdekat')
-                .attr('for', `pilihan-${i}`)
-                .end()
-                .find('input.input-terdekat')
-                .attr('id', `pilihan-${i}`)
-                .attr('placeholder', `Masukkan Pilihan ${i}`)
-                .end()
-                .find('label.label-terdekat-skip')
-                .attr('for', `skip-${i}`)
-                .end()
-                .find('input.input-terdekat-skip')
-                .attr('id', `skip-${i}`)
-                .end()
-                .find('label.label-terdekat-check')
-                .attr('for', `kustom-${i}`)
-                .end()
-                .find('input.input-terdekat-check')
-                .attr('id', `kustom-${i}`);
+                    .find('label.label-terdekat.hanya')
+                    .html(`Pilihan ${i}`)
+                    .end()
+                    .find('label.label-terdekat')
+                    .attr('for', `pilihan-${i}`)
+                    .end()
+                    .find('input.input-terdekat')
+                    .attr('id', `pilihan-${i}`)
+                    .attr('placeholder', `Masukkan Pilihan ${i}`)
+                    .end()
+                    .find('label.label-terdekat-skip')
+                    .attr('for', `skip-${i}`)
+                    .end()
+                    .find('input.input-terdekat-skip')
+                    .attr('id', `skip-${i}`)
+                    .end()
+                    .find('label.label-terdekat-check')
+                    .attr('for', `kustom-${i}`)
+                    .end()
+                    .find('input.input-terdekat-check')
+                    .attr('id', `kustom-${i}`);
             });
-         
+
         });
 
-        // $('#clone-tanya-centang-edit').on('click', function() {
-        //       let cloneCount = $($('.percentangan-edit div.append-here').find('div.card')).length + 1
-        //         $('.percentangan-edit div.append-here').append(`
-        //            <div class="card mb-3">
-        //                 <div class="card-body">
-        //                     <div class="mb-3">
-        //                         <label for="pilihan-centang-${cloneCount}" class="form-label hanya label-terdekat">Pilihan ${cloneCount}</label>
-        //                         <input type="text"
-        //                         class="form-control input-terdekat" name="pilihan_centang[]" id="pilihan-centang-${cloneCount}" aria-describedby="helpId" placeholder="Masukkan Pilihan ${cloneCount}">
-        //                     </div>
-        //                     <div class="row mb-3">
-                                
-        //                         <div class="col-12">
-        //                             <div class="form-check">
-        //                                 <input
-        //                                     class="form-check-input kustom-1 input-terdekat-check"
-        //                                     type="checkbox" id="kustom-centang-${cloneCount}" name="lainnya_centang[]"
-        //                                     value="Lainnya">
-        //                                 <label class="form-check-label label-terdekat"
-        //                                     for="kustom-centang-${cloneCount}">
-        //                                     Kustom Jawaban
-        //                                 </label>
-        //                             </div>
-        //                         </div>
+        
 
-        //                     </div>
-        //                      <button type="button" class="btn btn-danger delete-centang-card-edit">delete</button>
-        //                 </div>
-        //             </div>`
-        //         )
-        // });
-
-        // $(document).on('click','button.delete-centang-card-edit',function(){
-
-        //     let card = $(this).closest('div.card');
-        //     card.remove();
-        //     let parentContainer = $('.percentangan-edit div.append-here');
-
-        //     parentContainer.find('div.card').each((i,el)=>{
-        //         i++;
-        //         $(el)
-        //         .find('label.label-terdekat.hanya')
-        //         .html(`Pilihan ${i}`)
-        //         .end()
-        //         .find('label.label-terdekat')
-        //         .attr('for', `pilihan-centang-${i}`)
-        //         .end()
-        //         .find('input.input-terdekat')
-        //         .attr('id', `pilihan-centang-${i}`)
-        //         .attr('placeholder', `Masukkan Pilihan ${i}`)
-        //         .end()
-        //         .find('label.label-terdekat-skip')
-        //         .attr('for', `skip-centang-${i}`)
-        //         .end()
-        //         .find('input.input-terdekat-skip')
-        //         .attr('id', `skip-centang-${i}`)
-        //         .end()
-        //         .find('label.label-terdekat-check')
-        //         .attr('for', `kustom-centang-${i}`)
-        //         .end()
-        //         .find('input.input-terdekat-check')
-        //         .attr('id', `kustom-centang-${i}`);
-        //     });
-         
-        // });
-
-        $('div.edit-tanya').click(function(){
+        $('div.edit-tanya').click(function () {
             const dataType = $(this).data('type');
             const dataTypeClass = $(this).data('type-class');
-            $('#editTanya select').val(dataType).append(`<option value="${dataType}" selected>${dataType}</option>`);
+            $('#editTanya select').val(dataType).append(
+                `<option value="${dataType}" selected>${dataType}</option>`);
             $(`.adhd`).addClass('d-none');
             $(`.${dataTypeClass}`).removeClass('d-none');
         });
-        $(document).find('a.number').on('click', function() {
+        $(document).find('a.number').on('click', function () {
             if ($(this).text() == "1") {
                 $('tr.1st-page').removeClass('d-none')
                 $('tr.2nd-page').addClass('d-none')
-            }
-            else if ($(this).text() == "2") {
+            } else if ($(this).text() == "2") {
                 $('tr.1st-page').addClass('d-none')
                 $('tr.2nd-page').removeClass('d-none')
             }
         })
+
     </script>
 
 
 
-  {{-- CRUD ADITYA --}}
-<script>
-    $('div.edit-tanya').on('click', function () {
-        let id = $(this).data('id');
-        $.ajax({
-            url: '{{url("/")}}/ajax/get_edit',
-            type: "GET",
-            data: {
-                id
-            },
-            success: function (response) {
-                if (response) {
-                    $('#content-editTanya').html(response);
-                }
-            }
-        });
-    });
-</script>
-
-<script>
-    $('div.edit-tanya-pilihan-ganda').on('click', function () {
-        let id = $(this).data('id');
-        $.ajax({
-            url: '{{url("/")}}/ajax/get_edit_pilhan_ganda',
-            type: "GET",
-            data: {
-                id
-            },
-            success: function (response) {
-                if (response) {
-                    $('#content-editTanya-ganda').html(response);
-                }
-            }
-        });
-    });
-</script>
-
-
-<script>
-    $(document).on('click','button.btn-delete', function (e) {
-    e.preventDefault();
-    let id = $(this).data('id');
-    let url = '{{url("/")}}/delete/short_question/' + id;
-    Swal.fire({
-        title: 'Apakah Anda Yakin?',
-        text: "Ingin menghapus item ini",
-        // icon: 'warning',  
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Ya, Hapus!'
-    }).then((result) => {
-        if (result.value) {
-            // Send DELETE request to server
+    {{-- CRUD ADITYA --}}
+    <script>
+        $('div.edit-tanya').on('click', function () {
+            let id = $(this).data('id');
             $.ajax({
-                url: url,
-                type: 'DELETE',
+                url: '{{url("/")}}/ajax/get_edit',
+                type: "GET",
                 data: {
-                    "_token": "{{ csrf_token() }}",
+                    id
                 },
-                success: function (data) {
-                    // Show success message and reload page
-                    Swal.fire(
-                        'Terhapus!',
-                        'Item Berhasil Di Hapus.',
-                        'success'
-                    ).then(() => {
-                        location.reload();
-                    });
-                },
-                error: function (data) {
-                    // Show error message
-                    Swal.fire(
-                        'Error!',
-                        'There was an error deleting your item.',
-                        'error'
-                    );
+                success: function (response) {
+                    if (response) {
+                        $('#content-editTanya').html(response);
+                    }
                 }
             });
-        }
-    });
-});
-</script>
-<script>
-    $('button.btn-delete-survei').on('click', function (e) {
-    e.preventDefault();
-    let id = $(this).data('id');
-    let url = '{{url("/")}}/delete/survei/' + id;
-    Swal.fire({
-        title: 'Yakin Ingin Menghapus Survey Ini?',
-        text: "Jika sudah terhapus, kamu tidak dapat melihat survey ini lagi",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus'
-    }).then((result) => {
-        if (result.value) {
-            // Send DELETE request to server
+        });
+
+    </script>
+
+    <script>
+        $('div.edit-tanya-pilihan-ganda').on('click', function () {
+            let id = $(this).data('id');
             $.ajax({
-                url: url,
-                type: 'DELETE',
+                url: '{{url("/")}}/ajax/get_edit_pilhan_ganda',
+                type: "GET",
                 data: {
-                    "_token": "{{ csrf_token() }}",
+                    id
                 },
-                success: function (data) {
-                    // Show success message and reload page
-                    Swal.fire(
-                        'Deleted!',
-                        'Your item has been deleted.',
-                        'success'
-                    ).then(() => {
-                        window.location = '{{url("/")}}/dashboard'; // Redirect to '/items' page
-                    });
-                },
-                error: function (data) {
-                    // Show error message
-                    Swal.fire(
-                        'Error!',
-                        'There was an error deleting your item.',
-                        'error'
-                    );
+                success: function (response) {
+                    if (response) {
+                        $('#content-editTanya-ganda').html(response);
+                    }
                 }
             });
-        }
-    });
-});
+        });
 
-</script>
+    </script>
+
+
+    <script>
+        $(document).on('click', 'button.btn-delete', function (e) {
+            e.preventDefault();
+            let id = $(this).data('id');
+            let url = '{{url("/")}}/delete/short_question/' + id;
+            Swal.fire({
+                title: 'Apakah Anda Yakin?',
+                text: "Ingin menghapus item ini",
+                // icon: 'warning',  
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Hapus!'
+            }).then((result) => {
+                if (result.value) {
+                    // Send DELETE request to server
+                    $.ajax({
+                        url: url,
+                        type: 'DELETE',
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                        },
+                        success: function (data) {
+                            // Show success message and reload page
+                            Swal.fire(
+                                'Terhapus!',
+                                'Item Berhasil Di Hapus.',
+                                'success'
+                            ).then(() => {
+                                location.reload();
+                            });
+                        },
+                        error: function (data) {
+                            // Show error message
+                            Swal.fire(
+                                'Error!',
+                                'There was an error deleting your item.',
+                                'error'
+                            );
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        $(document).on('click', 'button.btn-delete-multiple-question', function (e) {
+            e.preventDefault();
+            let id = $(this).data('id');
+            let url = '{{url("/")}}/delete/multiple_question/' + id;
+            Swal.fire({
+                title: 'Apakah Anda Yakin?',
+                text: "Ingin menghapus item ini",
+                // icon: 'warning',  
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Hapus!'
+            }).then((result) => {
+                if (result.value) {
+                    // Send DELETE request to server
+                    $.ajax({
+                        url: url,
+                        type: 'DELETE',
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                        },
+                        success: function (data) {
+                            // Show success message and reload page
+                            Swal.fire(
+                                'Terhapus!',
+                                'Item Berhasil Di Hapus.',
+                                'success'
+                            ).then(() => {
+                                location.reload();
+                            });
+                        },
+                        error: function (data) {
+                            // Show error message
+                            Swal.fire(
+                                'Error!',
+                                'There was an error deleting your item.',
+                                'error'
+                            );
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+
+
+    <script>
+        $('button.btn-delete-survei').on('click', function (e) {
+            e.preventDefault();
+            let id = $(this).data('id');
+            let url = '{{url("/")}}/delete/survei/' + id;
+            Swal.fire({
+                title: 'Yakin Ingin Menghapus Survey Ini?',
+                text: "Jika sudah terhapus, kamu tidak dapat melihat survey ini lagi",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Hapus'
+            }).then((result) => {
+                if (result.value) {
+                    // Send DELETE request to server
+                    $.ajax({
+                        url: url,
+                        type: 'DELETE',
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                        },
+                        success: function (data) {
+                            // Show success message and reload page
+                            Swal.fire(
+                                'Deleted!',
+                                'Your item has been deleted.',
+                                'success'
+                            ).then(() => {
+                                window.location =
+                                '{{url("/")}}/dashboard'; // Redirect to '/items' page
+                            });
+                        },
+                        error: function (data) {
+                            // Show error message
+                            Swal.fire(
+                                'Error!',
+                                'There was an error deleting your item.',
+                                'error'
+                            );
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        $(document).on('click', 'button.btn-close-alert', function () {
+            Swal.fire({
+                title: 'Apakah anda Yakin??',
+                text: "Sistem Tidak Akan Menyimpan Perubahan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload();
+                }
+            })
+        });
+
+    </script>
 </body>
 
 </html>
