@@ -703,7 +703,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
                 <h1 class="mb-5 text-white">Ingin Mecoba SmartSurvey?</h1>
                 <h6 class="mb-5 text-white">Dapatkan platform yang dapat berkembang dan berubah seiring dengan kebutuhan
                     survei Anda dari waktu ke waktu.</h6>
-                <button class="btn" style="background: white; color: #000">SIGN UP, IT'S FREE</button>
+                <a href="{{url('')}}/register" class="btn" style="background: white; color: #000">SIGN UP, IT'S FREE</a>
             </div>
         </div>
     </div>
