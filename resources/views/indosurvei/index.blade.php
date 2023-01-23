@@ -606,7 +606,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
     </div>
 </section>
 
-<section class="sect-bg">
+{{-- <section class="sect-bg">
     <div class="container pt-5 pb-5">
         <h2 class="mb-4 text-center">
             Sampel Survey Kami
@@ -693,7 +693,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 <section>
     <div class="container pt-5 pb-5">
