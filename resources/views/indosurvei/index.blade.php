@@ -75,7 +75,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
 <section class="sect-bg">
     <div class="container" style="padding-top: 3rem; padding-bottom: 1rem;">
         <div class="text-center" data-aos="fade-down" data-aos-duration="1500">
-            <img style="width: 400px; margin-bottom: 4rem;" src="{{url('/')}}/assets/logo/logo.png" alt="">
+            <img style="width: 35%; margin-bottom: 4rem;" src="{{url('/')}}/assets/logo/logo.png" alt="">
         </div>
         <div class="mb-5" data-aos="fade-right"  data-aos-duration="2000">
             <h2 class="mb-4">
