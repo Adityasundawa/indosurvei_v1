@@ -1,8 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-<div style="background: rgb(107,211,210);
-background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100%);">
+<div style="background: rgb(107,211,210); background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100%);">
     <div class="container jumbothing">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
             <div class="carousel-inner mx-auto text-white" style="width: 90%">
@@ -101,10 +100,10 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
 <section>
     <div class="container pt-5 pb-5">
         <div class="row align-items-center">
-            <div class="col-md-5 mb-4 text-center" data-aos="zoom-in-right" data-aos-duration="1000">
-                <img class="carousel-img-w" src="{{url('/')}}/assets/illustration/chart_indosurvei.png" alt="">
+            <div class="col-md-5 mb-4 text-center">
+                <img class="carousel-img-w" data-aos="zoom-in-right" data-aos-duration="1000" src="{{url('/')}}/assets/illustration/chart_indosurvei.png" alt="">
             </div>
-            <div class="col-md-7" data-aos="zoom-in-left" data-aos-duration="1000">
+            <div class="col-md-7" data-aos="fade-right" data-aos-duration="1000">
                 <h2 class="mb-4">
                     Alat Survei yang Tepat Untuk Anda
                 </h2>
@@ -409,7 +408,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
                         <p style="font-size: 14px">Anda bisa memberikan reward bagi responden yang telah mengisi survei
                             Anda dengan mudah dan cepat.</p>
                     </div>
-                    <div class="col text-start"  data-aos="fade-left" data-aos-duration="1000">
+                    <div class="col text-start"  data-aos="fade-right" data-aos-duration="1000">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
                             xmlns:svgjs="http://svgjs.com/svgjs" width="95px" x="0" y="0" viewBox="0 0 512 512.001"
                             style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
@@ -472,7 +471,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
                             </g>
                         </svg>
                     </div>
-                    <div class="col-8 text-center" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="col-8 text-center" data-aos="fade-right" data-aos-duration="1000">
                         <p class="rounded-pill bg-brown px-3 py-1" style="font-size: 16px; font-weight: bold">Survey
                             Template Market</p>
                         <p style="font-size: 14px">Pilih dengan harga terjangkau untuk semua kualitas template survei di
@@ -489,7 +488,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
                         <p style="font-size: 14px">Ada Bank Soal yang bisa ditambahkan ke survei Anda dengan cepat &
                             efisien.</p>
                     </div>
-                    <div class="col text-start" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="col text-start" data-aos="fade-right" data-aos-duration="1000">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
                             xmlns:svgjs="http://svgjs.com/svgjs" width="95px" x="0" y="0" viewBox="0 0 64 64"
                             style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
@@ -564,7 +563,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
                             </g>
                         </svg>
                     </div>
-                    <div class="col-8 text-center" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="col-8 text-center" data-aos="fade-right" data-aos-duration="1000">
                         <p class="rounded-pill bg-brown px-3 py-1" style="font-size: 16px; font-weight: bold">
                             Visualisasi Dashboard</p>
                         <p style="font-size: 14px">Lihat visualisasi dasbor untuk hasil survei yang telah Anda bagikan.
@@ -587,7 +586,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
             <div class="col-md-6 mt-2 mb-2" data-aos="fade-right" data-aos-duration="1000">
                 <img style="width: 100%" src="{{url('/')}}/assets/illustration/customer.svg" alt="">
             </div>
-            <div class="col-md-6 mt-2 mb-2" data-aos="fade-left" data-aos-duration="1000">
+            <div class="col-md-6 mt-2 mb-2" data-aos="fade-right" data-aos-duration="1000">
                 <h2 class="fw-bold text-warm mb-4">Kenali pelanggan Anda lebih baik</h2>
                 <p class="mb-0">Cari tahu seberapa baik kinerja bisnis Anda, dan di mana Anda perlu meningkatkan untuk
                     mencapai atau mempertahankan CX yang hebat.
@@ -595,11 +594,11 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
             </div>
             <div class="col-md-6 mt-2 mb-2">
                 <h2 class="fw-bold text-warm mb-4" data-aos="fade-right" data-aos-duration="1000">Riset Pasar</h2>
-                <p class="mb-0">Perluas kemampuan riset pasar Anda untuk melacak merek Anda dan menguji ide-ide Anda
+                <p class="mb-0" data-aos="fade-right" data-aos-duration="1000">Perluas kemampuan riset pasar Anda untuk melacak merek Anda dan menguji ide-ide Anda
                     kepada audiens yang Anda targetkan.
                 </p>
             </div>
-            <div class="col-md-6 mt-2 mb-2" data-aos="fade-left" data-aos-duration="1000">
+            <div class="col-md-6 mt-2 mb-2" data-aos="fade-right" data-aos-duration="1000">
                 <img style="width: 80%" src="{{url('/')}}/assets/illustration/marketing.svg" alt="">
             </div>
         </div>
