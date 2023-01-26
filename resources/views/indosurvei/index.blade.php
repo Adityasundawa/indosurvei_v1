@@ -6,7 +6,7 @@
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
             <div class="carousel-inner mx-auto text-white" style="width: 90%">
 
-                <div class="carousel-item active">
+                {{-- <div class="carousel-item active">
                     <div class="row align-items-center carousel-h-fxd">
                         <div class="col-lg-6 mb-2 mt-2 ml-5">
                             <div class="display-4">
@@ -18,15 +18,15 @@
                             <img class="carousel-img-w" src="{{url('/')}}/assets/illustration/banner1.png" alt="">
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
-                <div class="carousel-item">
+                <div class="carousel-item active">
                     <div class="row align-items-center carousel-h-fxd">
                         <div class="col-lg-6 mb-2 mt-2 ml-5">
                             <div class="display-4">
                                 Buat Survey jadi <b>Lebih Mudah</b>
                             </div>
-                            <button class="btn btn-dark mt-4">Mulai buat surveimu, Gratis!</button>
+                            <a href="{{url('')}}/register" class="btn btn-dark mt-4">Mulai buat surveimu, Gratis!</a>
                         </div>
                         <div class="col-lg-6 mb-2 mt-2 text-center">
                             <img class="carousel-img-w" src="{{url('/')}}/assets/illustration/chart_indosurvei.png"
@@ -35,7 +35,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item">
+                {{-- <div class="carousel-item">
                     <div class="row align-items-center carousel-h-fxd">
                         <div class="col-lg-6 mb-2 mt-2 ml-5">
                             <div class="display-4">
@@ -47,25 +47,25 @@
                             <img class="carousel-img-w" src="{{url('/')}}/assets/illustration/img-survei.png" alt="">
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev" style="width: auto">
                 <i class="fa-solid fa-chevron-left fs-2"></i>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="next" style="width: auto">
                 <i class="fa-solid fa-chevron-right fs-2"></i>
-            </button>
-            <div class="carousel-indicators mt-4" style="position: relative; margin-bottom: 0px;">
+            </button> --}}
+            {{-- <div class="carousel-indicators mt-4" style="position: relative; margin-bottom: 0px;">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                     aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
@@ -702,7 +702,7 @@ background: linear-gradient(90deg, rgba(107,211,210,1) 0%, rgba(214,0,255,1) 100
                 <h1 class="mb-5 text-white">Ingin Mecoba SmartSurvey?</h1>
                 <h6 class="mb-5 text-white">Dapatkan platform yang dapat berkembang dan berubah seiring dengan kebutuhan
                     survei Anda dari waktu ke waktu.</h6>
-                <a href="{{url('')}}/register" class="btn" style="background: white; color: #000">SIGN UP, IT'S FREE</a>
+                <a href="{{url('')}}/register" class="btn" style="background: white; color: #000">DAFTAR SEKARANG, GRATIS!</a>
             </div>
         </div>
     </div>
