@@ -54,20 +54,20 @@
         }
 
         .navbar-cuscol {
-            background: rgba(0, 0, 0, 0);
+            background: #fff;
             padding: 20px;
         }
 
-        .navbar-cuscol.scrolled {
+        /* .navbar-cuscol.scrolled {
             background: #fff;
-        }
+        } */
 
         .navbar-cuscol.scrolled a{
             color: #000;
         }
 
         .navbar-cuscol ul li a {
-            color: white;
+            color: black;
             font-weight: 500;
         }
 
