@@ -238,7 +238,7 @@
 
 
             <!-- Start Footer Area -->
-            <div class="footer-area">
+            <div class="footer-area w-100">
                 <div class="container-fluid">
                     <div class="footer-content">
                         <p>Copyright © 2022 <a target="_blank">Pentagon</a></p>

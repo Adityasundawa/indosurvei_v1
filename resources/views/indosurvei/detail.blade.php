@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 @section('content')
 
-<div class="features-area mb-5">
+<div class="flex-grow-1 features-area mb-5">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 mb-5">

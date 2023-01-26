@@ -57,7 +57,7 @@ class UserController extends Controller
         $question = Survey::create([
            'title' => $request['judul'],
            'category' =>  $request['kategori'],
-           'description' =>  $request['deskripsi'],
+           'description' =>  NULL,
            'users_id' =>  Auth::user()->id,
            'images' =>  $imageName,
            'answer_id' => 0,

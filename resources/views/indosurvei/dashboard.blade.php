@@ -6,7 +6,7 @@ use App\Models\User;
 @extends('layouts.dashboard')
 @section('content')
 
-    <div class="features-area mb-5">
+    <div class="flex-grow-1 features-area mb-5">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 mb-5">
@@ -36,28 +36,6 @@ use App\Models\User;
                                         <div class="modal-body">
                                          
                                              @csrf
-                                                <div class="row mb-3">
-                                                    <label for="pilihsurvey">Pilih Tipe</label>
-                                                    <div class="col-6">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="pilihsurvey" id="survey" checked>
-                                                            <label class="form-check-label" for="survey">
-                                                                Survey
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="pilihsurvey" id="quiz">
-                                                            <label class="form-check-label" for="quiz">
-                                                                Quiz
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
                                                 <div class="mb-3">
                                                     <label for="judul" class="form-label">Judul Survey</label>
                                                     <input type="text" required class="form-control" name="judul" id="judul"
@@ -70,6 +48,7 @@ use App\Models\User;
                                                         <option selected="" disabled>Pilih Kategori</option>
                                                         <option value="Bisnis & E-Commerce">Bisnis & E-Commerce</option>
                                                         <option value="Pendidikan">Pendidikan</option>
+                                                        <option value="Politik">Politik</option>
                                                         <option value="Trend Fashion">Trend Fashion</option>
                                                         <option value="Makanan">Makanan</option>
                                                         <option value="Kesehatan">Kesehatan</option>
@@ -84,13 +63,13 @@ use App\Models\User;
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="deskripsi" class="form-label">Deskripsi</label>
-                                                    <textarea required class="form-control" name="deskripsi" id="deskripsi"
-                                                        rows="3"></textarea>
+                                                    <label for="deskripsi" class="form-label d-none">Deskripsi</label>
+                                                    <textarea class="form-control" name="deskripsi" id="deskripsi"
+                                                        rows="3" hidden></textarea>
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="gambar" class="form-label">Gambar Background</label>
+                                                    <label for="gambar" class="form-label">Gambar Tema</label>
                                                     <input type="file"  class="form-control" style="height: auto" name="gambar" id="gambar"
                                                         placeholder="Masukkan Gambar" aria-describedby="gambarHelp">
                                                     <div id="gambarHelp" class="form-text">File berformat .jpg atau .png
@@ -114,18 +93,6 @@ use App\Models\User;
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2 mt-2 mb-2">
-                            <button class="w-100 h-100 btn btn-primary rounded-5 text-start">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <i class="ri-arrow-right-circle-line fs-1"></i>
-                                    </div>
-                                    <div class="col-md-12 fs-6">
-                                        Jelajahi Template
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
                     </div>
 
                 </div>
@@ -141,9 +108,9 @@ use App\Models\User;
                     <div class="row">
                         @foreach ($question as $que)
                         <?php 
-                       $user = User::find($que['users_id'])
-?>
-                        <div class="col-md-3">
+                        $user = User::find($que['users_id'])
+                        ?>
+                        <div class="col-md-3 mt-2 mb-2">
                             
                             <a href="{{url('')}}/edit-survei/{{Crypt::encrypt($que['id'])}}">
                                 <div class="card text-left">
