@@ -9,11 +9,6 @@
             <div class="card-header  bg-thumb-big"
                 style="background-image: url('{{url('/')}}/images/background/survey/{{$survei['images']}}') ">
                 @endif
-                <div class="row align-items-end h-100">
-                    <div class="col">
-                        <h4 class="card-title d-none judul-thumb" style="mix-blend-mode: difference; color: white">{{$survei['title']}}</h4>
-                    </div> 
-                </div>
             </div>
           <form action="{{route('answer.survei')}}" method="post">
             @csrf
@@ -22,6 +17,9 @@
                     <h4 class="card-title">{{$survei['title']}}</h4>
                     <p class="card-text">{{$survei['description']}}</p>
                 </div>
+                <h4 class="judul-thumb d-none ">
+                    {{$survei['title']}}
+                </h4>
                 @if (count($type_survey) == 0)
                 @include('indosurvei.include.share.null-survei')
                 @endif
