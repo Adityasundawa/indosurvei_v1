@@ -7,18 +7,17 @@
 </div>
 @endif
 <div class="features-area mb-5">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-12 mb-5">
                 <div class="card">
                     @if ($question['images'] == 'default.png')
-                    <div class="card-header  bg-thumb-big">
+                    <div class="card-header bg-thumb-big">
                         @else
                         <div class="card-header  bg-thumb-big"
-                            style="background-image: url('{{url('/')}}/images/background/survey/{{$question['images']}}') ">
+                            style="background-image: url('{{url('/')}}/images/background/survey/{{$question['images']}}')">
                             @endif
-
-                            <div class="row">
+                            <div class="row" style="position: relative; height: 100%;">
                                 <div class="col-6">
                                     <h2 style="mix-blend-mode: difference; color: white">
                                         {{$question['title']}}
@@ -30,13 +29,19 @@
                                 <div class="col-md-12 mb-5">
                                     <h6 style="mix-blend-mode: difference; color: white"> {{$question['description']}}</h6>
                                 </div>
-                                <div class="col-md-12 text-end">
-                                    <button class="btn btn-outline-primary">Download</button>
-                                    <a href="" class="btn btn-outline-primary">Preview</a>
+                                <div class="col-md-12 text-end " style="
+                                position: absolute;
+                                right: 0;
+                                bottom: 0;
+                                
+                            ">
+                                    <button class="btn btn-primary">Download</button>
+                                    <a href="" class="btn btn-primary">Preview</a>
                                     <a href="{{url('')}}/share/{{Crypt::encrypt($id)}}"
                                         class="btn btn-primary">Shares</a>
                                 </div>
                             </div>
+                            <br>
                         </div>
                         <div class="card-footer border-top border-bottom">
                             <div class="row align-items-center">
