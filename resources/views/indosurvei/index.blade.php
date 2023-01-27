@@ -29,8 +29,7 @@
                             <a href="{{url('')}}/register" class="btn btn-dark mt-4">Mulai buat surveimu, Gratis!</a>
                         </div>
                         <div class="col-lg-6 mb-2 mt-2 text-center">
-                            <img class="carousel-img-w" src="{{url('/')}}/assets/illustration/chart_indosurvei.png"
-                                alt="">
+                            <img class="carousel-img-w" src="{{url('/')}}/assets/illustration/chart_indosurvei.png" alt="">
                         </div>
                     </div>
                 </div>

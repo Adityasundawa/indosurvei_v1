@@ -18,23 +18,22 @@
                             style="background-image: url('{{url('/')}}/images/background/survey/{{$question['images']}}')">
                             @endif
                             <div class="row" style="position: relative; height: 100%;">
+                                <div class="desktop-md" style="width: 125px; height: 125px; border: 1px solid rgba(0,0,0, 0.18); border-radius: 50%; position: absolute; bottom: -55px; left: 50px; object-fit: cover; background-size: cover; background-image: url({{url('/')}}/images/background/survey/{{$question['images']}});">
+                                </div>
                                 <div class="col-6">
                                     <h2 style="mix-blend-mode: difference; color: white">
                                         {{$question['title']}}
                                     </h2>
                                 </div>
                                 <div class="col-6 text-end">
-                                    <a href="#" style="mix-blend-mode: difference; color: white">Ubah Background <i class="ri-edit-2-fill"></i></a>
+                                    <a href="#" style="mix-blend-mode: difference; color: white">Ubah Background <i
+                                            class="ri-edit-2-fill"></i></a>
                                 </div>
                                 <div class="col-md-12 mb-5">
-                                    <h6 style="mix-blend-mode: difference; color: white"> {{$question['description']}}</h6>
+                                    <h6 style="mix-blend-mode: difference; color: white"> {{$question['description']}}
+                                    </h6>
                                 </div>
-                                <div class="col-md-12 text-end " style="
-                                position: absolute;
-                                right: 0;
-                                bottom: 0;
-                                
-                            ">
+                                <div class="col-md-12 text-end " style=" position: absolute; right: 0; bottom: 0;">
                                     <button class="btn btn-primary">Download</button>
                                     <a href="" class="btn btn-primary">Preview</a>
                                     <a href="{{url('')}}/share/{{Crypt::encrypt($id)}}"
@@ -43,7 +42,7 @@
                             </div>
                             <br>
                         </div>
-                        <div class="card-footer border-top border-bottom">
+                        <div class="card-footer border-top border-bottom pt-5">
                             <div class="row align-items-center">
                                 <div class="col-md-4 text-center py-1 mb-1 mt-1">
                                     <div class="row nav nav-pills g-0 align-items-center p-0 bg-white rounded-5">
@@ -1245,7 +1244,8 @@
         </div>
     </div>
 
-    <div class="modal fade " id="editTanya" tabindex="-1" aria-labelledby="tambahTanyaLabel"  data-bs-backdrop="static" aria-hidden="true">
+    <div class="modal fade " id="editTanya" tabindex="-1" aria-labelledby="tambahTanyaLabel" data-bs-backdrop="static"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" id="content-editTanya">
 
