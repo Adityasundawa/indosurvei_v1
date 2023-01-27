@@ -9,6 +9,7 @@ use App\Models\MultiplechoicesAnswer;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Question;
 use App\Models\ShortQuestion;
+use App\Models\Survei_answer;
 use App\Models\Survey;
 use App\Models\Typesurvey;
 use Illuminate\Http\Request;
@@ -78,7 +79,7 @@ class UserController extends Controller
         $data['question'] = Survey::find($id);
         $data['id'] = $id;
         $data['type_survey'] = Typesurvey::where('survey_id',$id)->get();
-
+        $data['survei_answer'] = Survei_answer::where('survey_id',$id)->get();
         return view('indosurvei.survei.edit_survei',$data);
     }
 
@@ -172,7 +173,7 @@ class UserController extends Controller
         Alert::success('Selamat', 'Item  Berhasil Di Update');
        return redirect()->back();
     }
-
+    
     public function update_multiple_question(Request $request, $id)
     {
         $item = Multiplechoice::findOrFail($id);

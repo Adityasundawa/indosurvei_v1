@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
 Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']);
 Route::get('share/{id}', [IndoSurvei::class, 'share'])->name('share');
+Route::post('/answer_survei', [IndoSurvei::class, 'answer_survei'])->name('answer.survei');
 Route::controller(IndoSurvei::class)->group(function () {
     Route::get('/survei/add', 'indosurvei_add')->name('indosurvei.add');
     // Route::get('/{slug}', 'indosurvei_slug')->name('indosurvei.slug');

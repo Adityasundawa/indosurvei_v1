@@ -15,6 +15,8 @@
                     </div> 
                 </div>
             </div>
+          <form action="{{route('answer.survei')}}" method="post">
+            @csrf
             <div class="card-body mb-5">
                 <div class="first-page">
                     <h4 class="card-title">{{$survei['title']}}</h4>
@@ -36,20 +38,17 @@
                 @endif
                 <?php $l++ ?>
                 @endforeach
-
+                <input type="hidden" name="id_question" value="{{$id_question}}">
+                <input type="hidden" name="id_survei" value="{{$survei['id']}}">
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary p-2 ambil-survey">Ambil Survei</button>
-                {{-- <button class="btn btn-primary p-2 next-to-q2 d-none">Next</button>
-            <button class="btn btn-outline-primary p-2 text-start back-to-q1 d-none">Back</button>
-            <button class="btn btn-primary p-2 next-to-q3 d-none">Next</button>
-            <button class="btn btn-outline-primary p-2 text-start back-to-q2 d-none">Back</button>
-            <button class="btn btn-primary p-2 next-to-q4 d-none">Next</button>
-            <button class="btn btn-outline-primary p-2 text-start back-to-q3 d-none">Back</button> --}}
-                <button class="btn btn-outline-primary p-2 text-start back-to-q d-none">Back</button>
-                <button class="btn btn-primary p-2 next-to-q d-none">Next</button>
+                <button type="button" class="btn btn-primary p-2 ambil-survey">Ambil Survei</button>
+ 
+                <button type="button" class="btn btn-outline-primary p-2 text-start back-to-q d-none">Back</button>
+                <button type="button" class="btn btn-primary p-2 next-to-q d-none">Next</button>
                 <button type="submit" class="btn btn-success p-2 submit d-none">Submit</button>
             </div>
+          </form>
         </div>
     </div>
 
