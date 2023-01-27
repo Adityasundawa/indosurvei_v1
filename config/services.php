@@ -33,6 +33,6 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => 'http://indosurvei.com/callback/google',
+        'redirect' => 'https://indosurvei.com/callback/google',
       ], 
 ];
