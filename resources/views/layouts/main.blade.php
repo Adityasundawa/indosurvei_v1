@@ -54,20 +54,20 @@
         }
 
         .navbar-cuscol {
-            background: rgba(0, 0, 0, 0);
+            background: #fff;
             padding: 20px;
         }
 
-        .navbar-cuscol.scrolled {
+        /* .navbar-cuscol.scrolled {
             background: #fff;
-        }
+        } */
 
         .navbar-cuscol.scrolled a{
             color: #000;
         }
 
         .navbar-cuscol ul li a {
-            color: white;
+            color: black;
             font-weight: 500;
         }
 
@@ -146,6 +146,18 @@
                 display: none;
             }
         }
+        
+        @media (max-width: 768px) {
+            .navbar-cuscol {
+                background-color: #fff;
+            }
+
+            .navbar-cuscol a.nav-link {
+                color: #000;
+                margin: 0px !important;
+                margin-top: 15px !important;
+            }
+        }
     </style>
 </head>
 
@@ -159,15 +171,6 @@
             </button>
             <div class="collapse navbar-collapse fw-bold mt-auto" id="navbarNav">
                 <ul class="navbar-nav ms-auto my-auto">
-                    <li class="nav-item my-auto">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item my-auto">
-                        <a class="nav-link" href="#">Feature</a>
-                    </li>
-                    <li class="nav-item my-auto">
-                        <a class="nav-link" href="#">Survey Example</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-warm w-125 my-1 mx-2" href="{{url('')}}/register">SIGN UP</a>
                     </li>
@@ -184,10 +187,10 @@
     <footer class="p-5" style="background: #daf3f4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-end">
+                <div class="col-md-6 text-center mt-1 mb-1">
                     Privacy Policy - Term of Use
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 text-center mt-1 mb-1">
                     Copyright © 2022 Pentagon
                 </div>
             </div>
