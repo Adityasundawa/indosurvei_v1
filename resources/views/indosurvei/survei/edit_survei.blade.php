@@ -1,5 +1,16 @@
 @extends('layouts.dashboard')
 @section('content')
+<?php 
+
+use App\Models\ShortQuestion;
+use App\Models\Typesurvey;
+
+use App\Models\MultiplechoicesAnswer;
+use App\Models\Multiplechoice;
+use App\Models\Survei_answer;
+
+
+?>
 
 @if(Session::has('message'))
 <div class="alert alert-primary" role="alert">
@@ -943,31 +954,52 @@
                                                 <table class="table table-bordered table-striped">
                                                     <tr class="1st-page">
                                                         <th style="width: 100px">Pertanyaan</th>
-                                                        <th style="width: 200px">
-                                                            <div class="row">
-                                                                <div class="col">email1@gmail.com</div>
-                                                                <div class="col text-end">x</div>
-                                                            </div>
-                                                        </th>
-                                                        <th style="width: 200px">
-                                                            <div class="row">
-                                                                <div class="col">email2@gmail.com</div>
-                                                                <div class="col text-end">x</div>
-                                                            </div>
-                                                        </th>
+                                                        
+                                                        
+                                                        
                                                     </tr>
+                                                    @foreach ($type_survey as $type)
+
+                                                    @if ($type['type'] == "Jawaban Singkat")
+                                                    <?php $id_question = $type['question_id']?>
+                                                    <?php $ShortQuestion = ShortQuestion::find($id_question);
+                                                          $Survei_answer1 = Survei_answer::where('question_id',$ShortQuestion['id'])->get(); ?>
+                                                         <tr class="1st-page">
+                                                        <td>
+                                                            {{$ShortQuestion['question']}} 
+                                                        </td>
+                                                        @foreach ($Survei_answer1 as $item1)
+                                                        <td>
+                                                          {{$item1['answer']}}
+                                                        </td>
+                                                     
+                                                        @endforeach
+                                                      
+                                                    </tr>
+                                                    @endif
+                
+                                                    @if ($type['type'] == "Pilihan Ganda")
+                                                    <?php $id_question = $type['question_id']?>
+                                                    <?php $Multiplechoice = Multiplechoice::find($id_question); 
+                                                     $Survei_answer2 = Survei_answer::where('question_id',$Multiplechoice['id'])->get(); ?>
                                                     <tr class="1st-page">
                                                         <td>
-                                                            1. Jawaban Singkat
+                                                       {{$Multiplechoice['question']}}
                                                         </td>
+                                                        @foreach ($Survei_answer2 as $item2)
                                                         <td>
-                                                            Jawaban 1
+                                                          {{$item2['answer']}}
                                                         </td>
-                                                        <td>
-                                                            Jawaban 2
-                                                        </td>
+                                                     
+                                                        @endforeach
+                                                     
                                                     </tr>
-                                                    <tr class="1st-page">
+                                                    @endif
+                
+                
+                                                    @endforeach
+                                                    
+                                                    {{-- <tr class="1st-page">
                                                         <td>
                                                             2. Pilihan Ganda
                                                         </td>
@@ -1064,7 +1096,7 @@
                                                         <td>5. Skala</td>
                                                         <td>6</td>
                                                         <td></td>
-                                                    </tr>
+                                                    </tr> --}}
                                                 </table>
                                             </div>
                                             <nav aria-label="Page navigation example">

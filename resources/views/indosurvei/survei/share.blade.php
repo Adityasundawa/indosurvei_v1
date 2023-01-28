@@ -38,7 +38,7 @@
                 @endif
                 <?php $l++ ?>
                 @endforeach
-                <input type="hidden" name="id_question" value="{{$id_question}}">
+           
                 <input type="hidden" name="id_survei" value="{{$survei['id']}}">
             </div>
             <div class="card-footer text-end">

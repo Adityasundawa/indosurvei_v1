@@ -15,10 +15,11 @@ $answer = MultiplechoicesAnswer::where('multiplechoices_id',$question->id)->get(
     <?php $i = 1 ?>
     @foreach ($answer as $ans)
     <div class="form-check">
-        <input class="form-check-input" type="radio" value="{{$ans['answer']}}" name="pilihan" id="P1">
+        <input class="form-check-input" type="radio" value="{{$ans['answer']}}" name="pilihan_{{$question['id']}}" id="P1">
         <label class="form-check-label fw-bold" for="P1">
             {{$ans['answer']}}
         </label>
     </div>
   @endforeach
 </div>
+<input type="hidden" name="id_question_ganda[]" value="{{$id_question}}">
